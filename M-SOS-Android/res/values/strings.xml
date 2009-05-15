@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">S.O.S</string>
+    <string name="version_name">0.2.1</string>
+    
+    <!-- Tab Title -->
+    <string name="tab1_title">Alerter</string>
+    <string name="tab2_title">Plan</string>
+    <string name="tab3_title">Outils</string>
+    
+    <!-- Button label -->
+    <string name="button_accident_text">Accident de la route</string>
+    <string name="button_person_text">Malaise / Noyade / Chute</string>
+    <string name="button_fire_text">Feu / Explosion</string>
+    <string name="button_domestic_text">Accident domestique</string>
+    <string name="button_cardiac_text">Assistance massage cardiaque</string>
+    
+    <!-- Menu item -->
+    <string name="item_victime">Je suis victime</string>
+    <string name="item_temoin">Je suis témoin</string>
+
+    <!-- Dialog message -->
+    <string name="message_gps_disabled">Attention ! \n\nVotre GPS est désactivé, la localisation trouvée sera approximative.</string>
+    <string name="message_sos_sent">S.O.S envoyé au serveur. </string>
+    <string name="message_sos_not_sent">Le S.O.S n\'a pas pu être envoyé au serveur. </string>
+    <string name="message_about">S.O.S est une application développée par Ludovic Toinel &lt;ltoinel@gmail.com&gt;\n\nhttp://sos.geeek.org</string>
+    <string name="message_sms_alert">Ce SMS a été envoyé automatiquement par mon téléphone. Je suis actuellement en difficulté, venez m\'aider.</string>
+    <string name="message_notification_sms_sent">Un SMS de notification a été envoyé à votre proche.</string>
+    
+    <!-- Dialogs -->  
+    <string name="dialog_incident_context">Contexte</string>
+    
+    <!-- Preferences -->  
+    <string name="preferences_profile">Votre profile</string>
+    <string name="preferences_firstname">Prénom</string>
+    <string name="preferences_firstname_summary">Cliquez pour entrer votre prénom</string>
+    <string name="preferences_lastname">Nom</string>
+    <string name="preferences_lastname_summary">Cliquez pour entrer votre nom de famille</string>
+    <string name="preferences_phonenumber">Numéro de Téléphone</string>
+    <string name="preferences_phonenumber_summary">Cliquez pour entrer votre numéro de téléphone</string>
+    <string name="preferences_bloodgroup">Groupe Sanguin</string>
+    <string name="preferences_bloodgroup_summary">Sélectionnez votre groupe Sanguin</string>
+    
+    <string name="preferences_misc">Divers</string>
+    
+    <string name="preferences_notification_sms">Notifications SMS</string>
+    <string name="preferences_notification_sms_enable">Notifier mes proches</string>
+    <string name="preferences_notification_sms_enable_summary">Lorsque je suis victime d'un accident, notifiez mes proches d\'un SMS</string>
+    <string name="preferences_notification_sms_phonenumber">Numéro de téléphone</string>
+    <string name="preferences_notification_sms_phonenumber_summary">Lorsque vous êtes victime d\'un accident, ce numéro de téléphone sera notifié d\'un SMS</string>
+
+	<string name="preferences_falldetection">Détection de chute</string>
+	<string name="preferences_falldetection_enable">Detecter mes chutes</string>
+	<string name="preferences_falldetection_enable_summary">Lancer l\'application automatiquement lorsque je chute</string>
+	<string name="preferences_falldetection_autocall_enable">Appeler automatiquement</string>
+	<string name="preferences_falldetection_autocall_enable_summary">Appeler automatiquement un proche lorsque je chute</string>
+	<string name="preferences_falldetection_autocall_phonenumber">Numéro de téléphone</string>
+	<string name="preferences_falldetection_autocall_phonenumber_summary">Numéro de téléphone du proche à appeler</string>
+	<string name="preferences_falldetection_sensibility">Sensibilité</string>
+	<string name="preferences_falldetection_sensibility_summary">Sensibilité à la détection des chutes</string>
+	
+	<string name="sensibility_high">Forte</string>
+	<string name="sensibility_medium">Moyenne</string>
+	<string name="sensibility_low">Basse</string>
+	
+    <!-- wording -->
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+   	<string name="ok">OK</string>
+   	<string name="cancel">Annuler</string>
+   	<string name="settings">Préférences</string>
+   	<string name="about">A propos</string>
+   	<string name="quit">Quitter</string>   
+    <string name="warning">Attention</string>
+    
+</resources>

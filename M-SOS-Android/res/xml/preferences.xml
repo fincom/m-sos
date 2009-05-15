@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    	<PreferenceCategory android:title="@string/preferences_profile">
+    	
+    		<EditTextPreference 
+	              	android:key="sos.firstname"
+	            	android:title="@string/preferences_firstname"
+	            	android:summary="@string/preferences_firstname_summary" />  
+	            	
+	        <EditTextPreference 
+	              	android:key="sos.lastname"
+	            	android:title="@string/preferences_lastname"
+	            	android:summary="@string/preferences_lastname_summary" />  
+	
+	        <EditTextPreference 
+	              	android:key="sos.phonenumber"
+	            	android:title="@string/preferences_phonenumber"
+	            	android:summary="@string/preferences_phonenumber_summary" />      
+	         
+	         <ListPreference  
+					android:key="sos.bloodgroup"  
+					android:title="@string/preferences_bloodgroup"  
+					android:summary="@string/preferences_bloodgroup_summary"  
+					android:entries="@array/bloodgroup"  
+					android:entryValues="@array/bloodgroup"  
+					android:dialogTitle="@string/preferences_bloodgroup" />  
+
+		</PreferenceCategory>
+
+	<PreferenceCategory android:title="@string/preferences_misc">
+	<PreferenceScreen android:title="@string/preferences_falldetection">
+	
+		<PreferenceCategory android:title="@string/preferences_falldetection">
+		
+		    <CheckBoxPreference
+	                android:key="sos.falldetection.enable"
+	                android:title="@string/preferences_falldetection_enable"
+	                android:defaultValue="false"
+	                android:summary="@string/preferences_falldetection_enable_summary" />
+	
+		    <ListPreference  
+					android:key="sos.falldetection.sensibility"  
+					android:title="@string/preferences_falldetection_sensibility"  
+					android:summary="@string/preferences_falldetection_sensibility_summary"  
+					android:entries="@array/sensibility"  
+					android:entryValues="@array/sensibilityValues"  
+					android:dialogTitle="@string/preferences_falldetection_sensibility" />  
+					
+			<CheckBoxPreference
+	                android:key="sos.falldetection.autocall.enable"
+	                android:title="@string/preferences_falldetection_autocall_enable"
+	                android:defaultValue="false"
+	                android:summary="@string/preferences_falldetection_autocall_enable_summary" 
+	                android:dependency="sos.falldetection.enable"/>   
+	                
+	        <EditTextPreference 
+	              	android:key="sos.falldetection.autocall.phonenumber"
+	            	android:title="@string/preferences_falldetection_autocall_phonenumber"
+	            	android:summary="@string/preferences_falldetection_autocall_phonenumber_summary" 
+	            	android:dependency="sos.falldetection.autocall.enable"/>   
+            	
+        </PreferenceCategory>
+	</PreferenceScreen>
+
+	<PreferenceScreen android:title="@string/preferences_notification_sms">
+	
+		<PreferenceCategory android:title="@string/preferences_notification_sms">
+		
+		    <CheckBoxPreference
+	                android:key="sos.notification.sms.enable"
+	                android:title="@string/preferences_notification_sms_enable"
+	                android:defaultValue="false"
+	                android:summary="@string/preferences_notification_sms_enable_summary" />
+	
+	        <EditTextPreference 
+	              	android:key="sos.notification.sms.phonenumber"
+	            	android:title="@string/preferences_notification_sms_phonenumber"
+	            	android:summary="@string/preferences_notification_sms_phonenumber_summary" 
+	            	android:dependency="sos.notification.sms.enable"/>   
+            	
+        </PreferenceCategory>
+	</PreferenceScreen>
+	</PreferenceCategory>
+
+</PreferenceScreen>

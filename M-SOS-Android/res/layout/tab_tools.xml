@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+			android:id="@+id/tab3"
+			android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:background="@drawable/background">
+
+	<ImageView android:id="@+id/image_title" 
+		android:src="@drawable/title"
+		android:paddingTop="10px" 
+		android:paddingBottom="10px"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+	</ImageView>
+	
+
+	<ToggleButton android:id="@+id/button_cardiac"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:textOn="@string/button_cardiac_text" 
+					android:textOff="@string/button_cardiac_text" 
+		android:drawableLeft="@drawable/button_cardiac" />
+		
+</LinearLayout>

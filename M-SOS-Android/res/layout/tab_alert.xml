@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+			android:id="@+id/tab1"
+			android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:background="@drawable/background">
+
+	<ImageView android:id="@+id/image_title" 
+		android:src="@drawable/title"
+		android:paddingTop="10px" 
+		android:paddingBottom="10px"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+	</ImageView>
+
+	<Button android:id="@+id/button_accident"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:text="@string/button_accident_text" 
+		android:drawableLeft="@drawable/button_accident" />
+
+	<Button android:id="@+id/button_person" 
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" 
+		android:text="@string/button_person_text"
+		android:drawableLeft="@drawable/button_person" />
+
+	<Button android:id="@+id/button_fire" 
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" 
+		android:text="@string/button_fire_text"
+		android:drawableLeft="@drawable/button_fire" />
+
+	<Button android:id="@+id/button_domestic"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:text="@string/button_domestic_text" 
+		android:drawableLeft="@drawable/button_domestic" />
+
+</LinearLayout>
