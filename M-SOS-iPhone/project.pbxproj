@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* SOS_IphoneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* SOS_IphoneAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754A0DD40C5E005A515E /* FlipsideView.xib */; };
+		280E754E0DD40C5E005A515E /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754B0DD40C5E005A515E /* MainView.xib */; };
+		280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754C0DD40C5E005A515E /* MainWindow.xib */; };
+		288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
+		289233A60DB2D0840083E9F9 /* FlipsideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A30DB2D0840083E9F9 /* FlipsideView.m */; };
+		289233A70DB2D0840083E9F9 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A50DB2D0840083E9F9 /* MainView.m */; };
+		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
+		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
+		3D102D5C0FB22C250030FAAD /* Alert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D102D5B0FB22C250030FAAD /* Alert.xib */; };
+		3D102D740FB22F0F0030FAAD /* button_accident.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D102D730FB22F0F0030FAAD /* button_accident.png */; };
+		3D102D760FB22F160030FAAD /* button_cardiac.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D102D750FB22F160030FAAD /* button_cardiac.png */; };
+		3D102D780FB22F1C0030FAAD /* button_domestic.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D102D770FB22F1C0030FAAD /* button_domestic.png */; };
+		3D102D7A0FB22F220030FAAD /* button_fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D102D790FB22F220030FAAD /* button_fire.png */; };
+		3D102D840FB22F3A0030FAAD /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D102D7B0FB22F3A0030FAAD /* title.png */; };
+		3D102D850FB22F3A0030FAAD /* placemark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D102D7C0FB22F3A0030FAAD /* placemark.png */; };
+		3D102D860FB22F3A0030FAAD /* tab_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D102D7D0FB22F3A0030FAAD /* tab_map.png */; };
+		3D102D870FB22F3A0030FAAD /* tab_tools.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D102D7E0FB22F3A0030FAAD /* tab_tools.png */; };
+		3D102D880FB22F3A0030FAAD /* tab_alert.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D102D7F0FB22F3A0030FAAD /* tab_alert.png */; };
+		3D102D890FB22F3A0030FAAD /* button_person.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D102D800FB22F3A0030FAAD /* button_person.png */; };
+		3D102D8A0FB22F3A0030FAAD /* menu_about.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D102D810FB22F3A0030FAAD /* menu_about.png */; };
+		3D102D8B0FB22F3A0030FAAD /* menu_quit.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D102D820FB22F3A0030FAAD /* menu_quit.png */; };
+		3D102D8C0FB22F3A0030FAAD /* menu_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D102D830FB22F3A0030FAAD /* menu_settings.png */; };
+		3D102DB60FB230830030FAAD /* Map.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D102DB50FB230830030FAAD /* Map.xib */; };
+		3D102DBB0FB230F20030FAAD /* Tabs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D102DBA0FB230F20030FAAD /* Tabs.xib */; };
+		3D102DC00FB232B70030FAAD /* Tools.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D102DBF0FB232B70030FAAD /* Tools.xib */; };
+		3D102DC70FB234FD0030FAAD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D102DC60FB234FD0030FAAD /* icon.png */; };
+		3D102DCA0FB235170030FAAD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D102DC90FB235170030FAAD /* icon.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* SOS_IphoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOS_IphoneAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* SOS_IphoneAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOS_IphoneAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* SOS-Iphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOS-Iphone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		280E754A0DD40C5E005A515E /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
+		280E754B0DD40C5E005A515E /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		280E754C0DD40C5E005A515E /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		288765580DF743DE002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		289233A20DB2D0840083E9F9 /* FlipsideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipsideView.h; path = Classes/FlipsideView.h; sourceTree = "<group>"; };
+		289233A30DB2D0840083E9F9 /* FlipsideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipsideView.m; path = Classes/FlipsideView.m; sourceTree = "<group>"; };
+		289233A40DB2D0840083E9F9 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainView.h; path = Classes/MainView.h; sourceTree = "<group>"; };
+		289233A50DB2D0840083E9F9 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainView.m; path = Classes/MainView.m; sourceTree = "<group>"; };
+		289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
+		289233A90DB2D0DB0083E9F9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Classes/MainViewController.m; sourceTree = "<group>"; };
+		289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipsideViewController.h; path = Classes/FlipsideViewController.h; sourceTree = "<group>"; };
+		289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipsideViewController.m; path = Classes/FlipsideViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* SOS_Iphone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOS_Iphone_Prefix.pch; sourceTree = "<group>"; };
+		3D102D5B0FB22C250030FAAD /* Alert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Alert.xib; sourceTree = "<group>"; };
+		3D102D730FB22F0F0030FAAD /* button_accident.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_accident.png; path = "/Users/mouali/Documents/workspace/SOS-Android/res/drawable/button_accident.png"; sourceTree = "<absolute>"; };
+		3D102D750FB22F160030FAAD /* button_cardiac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_cardiac.png; path = "/Users/mouali/Documents/workspace/SOS-Android/res/drawable/button_cardiac.png"; sourceTree = "<absolute>"; };
+		3D102D770FB22F1C0030FAAD /* button_domestic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_domestic.png; path = "/Users/mouali/Documents/workspace/SOS-Android/res/drawable/button_domestic.png"; sourceTree = "<absolute>"; };
+		3D102D790FB22F220030FAAD /* button_fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_fire.png; path = "/Users/mouali/Documents/workspace/SOS-Android/res/drawable/button_fire.png"; sourceTree = "<absolute>"; };
+		3D102D7B0FB22F3A0030FAAD /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = title.png; path = "/Users/mouali/Documents/workspace/SOS-Android/res/drawable/title.png"; sourceTree = "<absolute>"; };
+		3D102D7C0FB22F3A0030FAAD /* placemark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placemark.png; path = "/Users/mouali/Documents/workspace/SOS-Android/res/drawable/placemark.png"; sourceTree = "<absolute>"; };
+		3D102D7D0FB22F3A0030FAAD /* tab_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_map.png; path = "/Users/mouali/Documents/workspace/SOS-Android/res/drawable/tab_map.png"; sourceTree = "<absolute>"; };
+		3D102D7E0FB22F3A0030FAAD /* tab_tools.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_tools.png; path = "/Users/mouali/Documents/workspace/SOS-Android/res/drawable/tab_tools.png"; sourceTree = "<absolute>"; };
+		3D102D7F0FB22F3A0030FAAD /* tab_alert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_alert.png; path = "/Users/mouali/Documents/workspace/SOS-Android/res/drawable/tab_alert.png"; sourceTree = "<absolute>"; };
+		3D102D800FB22F3A0030FAAD /* button_person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_person.png; path = "/Users/mouali/Documents/workspace/SOS-Android/res/drawable/button_person.png"; sourceTree = "<absolute>"; };
+		3D102D810FB22F3A0030FAAD /* menu_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_about.png; path = "/Users/mouali/Documents/workspace/SOS-Android/res/drawable/menu_about.png"; sourceTree = "<absolute>"; };
+		3D102D820FB22F3A0030FAAD /* menu_quit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_quit.png; path = "/Users/mouali/Documents/workspace/SOS-Android/res/drawable/menu_quit.png"; sourceTree = "<absolute>"; };
+		3D102D830FB22F3A0030FAAD /* menu_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_settings.png; path = "/Users/mouali/Documents/workspace/SOS-Android/res/drawable/menu_settings.png"; sourceTree = "<absolute>"; };
+		3D102DB50FB230830030FAAD /* Map.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Map.xib; sourceTree = "<group>"; };
+		3D102DBA0FB230F20030FAAD /* Tabs.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Tabs.xib; sourceTree = "<group>"; };
+		3D102DBF0FB232B70030FAAD /* Tools.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Tools.xib; sourceTree = "<group>"; };
+		3D102DC60FB234FD0030FAAD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = "/Users/mouali/Documents/workspace/SOS-Android/res/drawable/icon.png"; sourceTree = "<absolute>"; };
+		3D102DC90FB235170030FAAD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = "/Users/mouali/Documents/workspace/SOS-Android/res/drawable/icon.png"; sourceTree = "<absolute>"; };
+		8D1107310486CEB800E47090 /* SOS_Iphone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SOS_Iphone-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Application Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* SOS_IphoneAppDelegate.h */,
+				1D3623250D0F684500981E51 /* SOS_IphoneAppDelegate.m */,
+			);
+			name = "Application Delegate";
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* SOS-Iphone.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		281C6CD70DB2D82200F60ACC /* Flipside View */ = {
+			isa = PBXGroup;
+			children = (
+				289233A20DB2D0840083E9F9 /* FlipsideView.h */,
+				289233A30DB2D0840083E9F9 /* FlipsideView.m */,
+				289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */,
+				289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */,
+			);
+			name = "Flipside View";
+			sourceTree = "<group>";
+		};
+		289233A00DB2D0730083E9F9 /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+				289233A40DB2D0840083E9F9 /* MainView.h */,
+				289233A50DB2D0840083E9F9 /* MainView.m */,
+				289233A80DB2D0DB0083E9F9 /* MainViewController.h */,
+				289233A90DB2D0DB0083E9F9 /* MainViewController.m */,
+			);
+			name = "Main View";
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				289233A00DB2D0730083E9F9 /* Main View */,
+				281C6CD70DB2D82200F60ACC /* Flipside View */,
+				080E96DDFE201D6D7F000001 /* Application Delegate */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* SOS_Iphone_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D102DC90FB235170030FAAD /* icon.png */,
+				3D102DC60FB234FD0030FAAD /* icon.png */,
+				3D102D8E0FB22F580030FAAD /* img */,
+				3D102D5B0FB22C250030FAAD /* Alert.xib */,
+				280E754A0DD40C5E005A515E /* FlipsideView.xib */,
+				280E754B0DD40C5E005A515E /* MainView.xib */,
+				280E754C0DD40C5E005A515E /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* SOS_Iphone-Info.plist */,
+				3D102DB50FB230830030FAAD /* Map.xib */,
+				3D102DBA0FB230F20030FAAD /* Tabs.xib */,
+				3D102DBF0FB232B70030FAAD /* Tools.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765580DF743DE002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D102D8E0FB22F580030FAAD /* img */ = {
+			isa = PBXGroup;
+			children = (
+				3D102D730FB22F0F0030FAAD /* button_accident.png */,
+				3D102D750FB22F160030FAAD /* button_cardiac.png */,
+				3D102D770FB22F1C0030FAAD /* button_domestic.png */,
+				3D102D790FB22F220030FAAD /* button_fire.png */,
+				3D102D830FB22F3A0030FAAD /* menu_settings.png */,
+				3D102D820FB22F3A0030FAAD /* menu_quit.png */,
+				3D102D810FB22F3A0030FAAD /* menu_about.png */,
+				3D102D800FB22F3A0030FAAD /* button_person.png */,
+				3D102D7F0FB22F3A0030FAAD /* tab_alert.png */,
+				3D102D7E0FB22F3A0030FAAD /* tab_tools.png */,
+				3D102D7D0FB22F3A0030FAAD /* tab_map.png */,
+				3D102D7C0FB22F3A0030FAAD /* placemark.png */,
+				3D102D7B0FB22F3A0030FAAD /* title.png */,
+			);
+			name = img;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* SOS-Iphone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SOS-Iphone" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SOS-Iphone";
+			productName = "SOS-Iphone";
+			productReference = 1D6058910D05DD3D006BFB54 /* SOS-Iphone.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SOS-Iphone" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* SOS-Iphone */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */,
+				280E754E0DD40C5E005A515E /* MainView.xib in Resources */,
+				280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */,
+				3D102D5C0FB22C250030FAAD /* Alert.xib in Resources */,
+				3D102D740FB22F0F0030FAAD /* button_accident.png in Resources */,
+				3D102D760FB22F160030FAAD /* button_cardiac.png in Resources */,
+				3D102D780FB22F1C0030FAAD /* button_domestic.png in Resources */,
+				3D102D7A0FB22F220030FAAD /* button_fire.png in Resources */,
+				3D102D840FB22F3A0030FAAD /* title.png in Resources */,
+				3D102D850FB22F3A0030FAAD /* placemark.png in Resources */,
+				3D102D860FB22F3A0030FAAD /* tab_map.png in Resources */,
+				3D102D870FB22F3A0030FAAD /* tab_tools.png in Resources */,
+				3D102D880FB22F3A0030FAAD /* tab_alert.png in Resources */,
+				3D102D890FB22F3A0030FAAD /* button_person.png in Resources */,
+				3D102D8A0FB22F3A0030FAAD /* menu_about.png in Resources */,
+				3D102D8B0FB22F3A0030FAAD /* menu_quit.png in Resources */,
+				3D102D8C0FB22F3A0030FAAD /* menu_settings.png in Resources */,
+				3D102DB60FB230830030FAAD /* Map.xib in Resources */,
+				3D102DBB0FB230F20030FAAD /* Tabs.xib in Resources */,
+				3D102DC00FB232B70030FAAD /* Tools.xib in Resources */,
+				3D102DC70FB234FD0030FAAD /* icon.png in Resources */,
+				3D102DCA0FB235170030FAAD /* icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* SOS_IphoneAppDelegate.m in Sources */,
+				289233A60DB2D0840083E9F9 /* FlipsideView.m in Sources */,
+				289233A70DB2D0840083E9F9 /* MainView.m in Sources */,
+				289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */,
+				289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SOS_Iphone_Prefix.pch;
+				INFOPLIST_FILE = "SOS_Iphone-Info.plist";
+				PRODUCT_NAME = "SOS-Iphone";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SOS_Iphone_Prefix.pch;
+				INFOPLIST_FILE = "SOS_Iphone-Info.plist";
+				PRODUCT_NAME = "SOS-Iphone";
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.0;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SOS-Iphone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SOS-Iphone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

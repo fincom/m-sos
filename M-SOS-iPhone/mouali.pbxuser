@@ -1,0 +1,388 @@
+// !$*UTF8*$!
+{
+	1D3623240D0F684500981E51 /* SOS_IphoneAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 294}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{3, 449}";
+			sepNavWindowFrame = "{{38, 594}, {750, 558}}";
+		};
+	};
+	1D3623250D0F684500981E51 /* SOS_IphoneAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {648, 532}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{217, 498}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* SOS-Iphone */ = {
+		activeExec = 0;
+		executables = (
+			3D102D460FB2137E0030FAAD /* SOS-Iphone */,
+		);
+	};
+	289233A90DB2D0DB0083E9F9 /* MainViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 1274}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 438}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 3D102D460FB2137E0030FAAD /* SOS-Iphone */;
+		activeSDKPreference = iphonesimulator3.0;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* SOS-Iphone */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* SOS-Iphone */,
+		);
+		codeSenseManager = 3D102D510FB2139C0030FAAD /* Code sense */;
+		executables = (
+			3D102D460FB2137E0030FAAD /* SOS-Iphone */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					341,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 263497710;
+			PBXWorkspaceStateSaveDate = 263497710;
+		};
+		perUserProjectItems = {
+			3D102D5E0FB22C300030FAAD /* PBXTextBookmark */ = 3D102D5E0FB22C300030FAAD /* PBXTextBookmark */;
+			3D102D610FB22C300030FAAD /* PBXTextBookmark */ = 3D102D610FB22C300030FAAD /* PBXTextBookmark */;
+			3D102D620FB22C300030FAAD /* PlistBookmark */ = 3D102D620FB22C300030FAAD /* PlistBookmark */;
+			3D102D8F0FB22FB60030FAAD /* PBXBookmark */ = 3D102D8F0FB22FB60030FAAD /* PBXBookmark */;
+			3D102D900FB22FB60030FAAD /* PBXBookmark */ = 3D102D900FB22FB60030FAAD /* PBXBookmark */;
+			3D102D910FB22FB60030FAAD /* PBXBookmark */ = 3D102D910FB22FB60030FAAD /* PBXBookmark */;
+			3D102D920FB22FB60030FAAD /* PBXBookmark */ = 3D102D920FB22FB60030FAAD /* PBXBookmark */;
+			3D102D930FB22FB60030FAAD /* PBXBookmark */ = 3D102D930FB22FB60030FAAD /* PBXBookmark */;
+			3D102D940FB22FB60030FAAD /* PBXBookmark */ = 3D102D940FB22FB60030FAAD /* PBXBookmark */;
+			3D102D950FB22FB60030FAAD /* PBXBookmark */ = 3D102D950FB22FB60030FAAD /* PBXBookmark */;
+			3D102D970FB22FB60030FAAD /* PBXBookmark */ = 3D102D970FB22FB60030FAAD /* PBXBookmark */;
+			3D102D980FB22FB60030FAAD /* PBXBookmark */ = 3D102D980FB22FB60030FAAD /* PBXBookmark */;
+			3D102D990FB22FB60030FAAD /* PBXBookmark */ = 3D102D990FB22FB60030FAAD /* PBXBookmark */;
+			3D102D9A0FB22FB60030FAAD /* PBXBookmark */ = 3D102D9A0FB22FB60030FAAD /* PBXBookmark */;
+			3D102D9C0FB22FB60030FAAD /* PBXBookmark */ = 3D102D9C0FB22FB60030FAAD /* PBXBookmark */;
+			3D102D9D0FB22FB60030FAAD /* PBXBookmark */ = 3D102D9D0FB22FB60030FAAD /* PBXBookmark */;
+			3D102D9E0FB22FB60030FAAD /* PBXBookmark */ = 3D102D9E0FB22FB60030FAAD /* PBXBookmark */;
+			3D102D9F0FB22FB60030FAAD /* PBXBookmark */ = 3D102D9F0FB22FB60030FAAD /* PBXBookmark */;
+			3D102DA00FB22FB60030FAAD /* PBXBookmark */ = 3D102DA00FB22FB60030FAAD /* PBXBookmark */;
+			3D102DA10FB22FB60030FAAD /* PBXBookmark */ = 3D102DA10FB22FB60030FAAD /* PBXBookmark */;
+			3D102DA20FB22FB60030FAAD /* PBXBookmark */ = 3D102DA20FB22FB60030FAAD /* PBXBookmark */;
+			3D102DA30FB22FB60030FAAD /* PBXBookmark */ = 3D102DA30FB22FB60030FAAD /* PBXBookmark */;
+			3D102DA40FB22FB60030FAAD /* PBXBookmark */ = 3D102DA40FB22FB60030FAAD /* PBXBookmark */;
+			3D102DAE0FB22FB60030FAAD /* PBXBookmark */ = 3D102DAE0FB22FB60030FAAD /* PBXBookmark */;
+			3D102DAF0FB22FB60030FAAD /* PBXBookmark */ = 3D102DAF0FB22FB60030FAAD /* PBXBookmark */;
+			3D102DB00FB22FB60030FAAD /* PBXBookmark */ = 3D102DB00FB22FB60030FAAD /* PBXBookmark */;
+			3D102DB10FB22FB60030FAAD /* PBXBookmark */ = 3D102DB10FB22FB60030FAAD /* PBXBookmark */;
+			3D102DD40FB2365D0030FAAD /* PBXBookmark */ = 3D102DD40FB2365D0030FAAD /* PBXBookmark */;
+			3D102DD50FB2365D0030FAAD /* PlistBookmark */ = 3D102DD50FB2365D0030FAAD /* PlistBookmark */;
+			3D102DD70FB2365D0030FAAD /* PBXTextBookmark */ = 3D102DD70FB2365D0030FAAD /* PBXTextBookmark */;
+			3D102DD80FB2365D0030FAAD /* PBXTextBookmark */ = 3D102DD80FB2365D0030FAAD /* PBXTextBookmark */;
+			3D102DDC0FB2365D0030FAAD /* PBXBookmark */ = 3D102DDC0FB2365D0030FAAD /* PBXBookmark */;
+			3D102DDD0FB2365D0030FAAD /* PBXTextBookmark */ = 3D102DDD0FB2365D0030FAAD /* PBXTextBookmark */;
+			3D102DDE0FB2365D0030FAAD /* PBXTextBookmark */ = 3D102DDE0FB2365D0030FAAD /* PBXTextBookmark */;
+			3DF834D70FB4A803008DF00A /* PBXTextBookmark */ = 3DF834D70FB4A803008DF00A /* PBXTextBookmark */;
+			3DF834D90FB4A803008DF00A /* PBXTextBookmark */ = 3DF834D90FB4A803008DF00A /* PBXTextBookmark */;
+			3DF834E00FB4A85A008DF00A /* PBXBookmark */ = 3DF834E00FB4A85A008DF00A /* PBXBookmark */;
+			3DF834E10FB4A85A008DF00A /* PBXBookmark */ = 3DF834E10FB4A85A008DF00A /* PBXBookmark */;
+			3DF834E20FB4A85A008DF00A /* PBXBookmark */ = 3DF834E20FB4A85A008DF00A /* PBXBookmark */;
+			3DF834EE0FB4A868008DF00A /* PBXBookmark */ = 3DF834EE0FB4A868008DF00A /* PBXBookmark */;
+		};
+		sourceControlManager = 3D102D500FB2139C0030FAAD /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	32CA4F630368D1EE00C91783 /* SOS_Iphone_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {564, 253}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 326}";
+		};
+	};
+	3D102D460FB2137E0030FAAD /* SOS-Iphone */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "SOS-Iphone";
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+	};
+	3D102D500FB2139C0030FAAD /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	3D102D510FB2139C0030FAAD /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	3D102D5E0FB22C300030FAAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32CA4F630368D1EE00C91783 /* SOS_Iphone_Prefix.pch */;
+		name = "SOS_Iphone_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 326;
+		vrLoc = 0;
+	};
+	3D102D610FB22C300030FAAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32CA4F630368D1EE00C91783 /* SOS_Iphone_Prefix.pch */;
+		name = "SOS_Iphone_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 326;
+		vrLoc = 0;
+	};
+	3D102D620FB22C300030FAAD /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* SOS_Iphone-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIconFile,
+		);
+		name = "/Library/Symfony/Iphone/SOS-Iphone/SOS_Iphone-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	3D102D8F0FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D730FB22F0F0030FAAD /* button_accident.png */;
+	};
+	3D102D900FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D750FB22F160030FAAD /* button_cardiac.png */;
+	};
+	3D102D910FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D770FB22F1C0030FAAD /* button_domestic.png */;
+	};
+	3D102D920FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D790FB22F220030FAAD /* button_fire.png */;
+	};
+	3D102D930FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D830FB22F3A0030FAAD /* menu_settings.png */;
+	};
+	3D102D940FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D820FB22F3A0030FAAD /* menu_quit.png */;
+	};
+	3D102D950FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D810FB22F3A0030FAAD /* menu_about.png */;
+	};
+	3D102D970FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D7F0FB22F3A0030FAAD /* tab_alert.png */;
+	};
+	3D102D980FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D7E0FB22F3A0030FAAD /* tab_tools.png */;
+	};
+	3D102D990FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D7D0FB22F3A0030FAAD /* tab_map.png */;
+	};
+	3D102D9A0FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D7C0FB22F3A0030FAAD /* placemark.png */;
+	};
+	3D102D9C0FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D730FB22F0F0030FAAD /* button_accident.png */;
+	};
+	3D102D9D0FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D750FB22F160030FAAD /* button_cardiac.png */;
+	};
+	3D102D9E0FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D770FB22F1C0030FAAD /* button_domestic.png */;
+	};
+	3D102D9F0FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D790FB22F220030FAAD /* button_fire.png */;
+	};
+	3D102DA00FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D7B0FB22F3A0030FAAD /* title.png */;
+	};
+	3D102DA10FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D820FB22F3A0030FAAD /* menu_quit.png */;
+	};
+	3D102DA20FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D810FB22F3A0030FAAD /* menu_about.png */;
+	};
+	3D102DA30FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D800FB22F3A0030FAAD /* button_person.png */;
+	};
+	3D102DA40FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D830FB22F3A0030FAAD /* menu_settings.png */;
+	};
+	3D102DAE0FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D7F0FB22F3A0030FAAD /* tab_alert.png */;
+	};
+	3D102DAF0FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D7E0FB22F3A0030FAAD /* tab_tools.png */;
+	};
+	3D102DB00FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D7D0FB22F3A0030FAAD /* tab_map.png */;
+	};
+	3D102DB10FB22FB60030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D7C0FB22F3A0030FAAD /* placemark.png */;
+	};
+	3D102DC90FB235170030FAAD /* icon.png */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 615}, {750, 558}}";
+		};
+	};
+	3D102DD40FB2365D0030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D7B0FB22F3A0030FAAD /* title.png */;
+	};
+	3D102DD50FB2365D0030FAAD /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* SOS_Iphone-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIdentifier,
+		);
+		name = "/Library/Symfony/Iphone/SOS-Iphone/SOS_Iphone-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	3D102DD70FB2365D0030FAAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* SOS_IphoneAppDelegate.h */;
+		name = "SOS_IphoneAppDelegate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 449;
+		vrLoc = 3;
+	};
+	3D102DD80FB2365D0030FAAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* SOS_IphoneAppDelegate.m */;
+		name = "SOS_IphoneAppDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 498;
+		vrLoc = 217;
+	};
+	3D102DDC0FB2365D0030FAAD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102DC90FB235170030FAAD /* icon.png */;
+	};
+	3D102DDD0FB2365D0030FAAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* SOS_IphoneAppDelegate.h */;
+		name = "SOS_IphoneAppDelegate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 449;
+		vrLoc = 3;
+	};
+	3D102DDE0FB2365D0030FAAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* SOS_IphoneAppDelegate.m */;
+		name = "SOS_IphoneAppDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 498;
+		vrLoc = 217;
+	};
+	3DF834D70FB4A803008DF00A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 438;
+		vrLoc = 0;
+	};
+	3DF834D90FB4A803008DF00A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 438;
+		vrLoc = 0;
+	};
+	3DF834E00FB4A85A008DF00A /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102DC60FB234FD0030FAAD /* icon.png */;
+	};
+	3DF834E10FB4A85A008DF00A /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D800FB22F3A0030FAAD /* button_person.png */;
+	};
+	3DF834E20FB4A85A008DF00A /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102DC60FB234FD0030FAAD /* icon.png */;
+	};
+	3DF834EE0FB4A868008DF00A /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3D102D800FB22F3A0030FAAD /* button_person.png */;
+	};
+}
