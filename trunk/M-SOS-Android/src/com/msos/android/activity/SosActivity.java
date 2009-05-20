@@ -1,9 +1,9 @@
-package com.msos.android.sos.activity;
+package com.msos.android.activity;
 
-import com.msos.android.sos.activity.service.FallDetectService;
-import com.msos.android.sos.manager.AlertManager;
-import com.msos.android.sos.manager.DeviceManager;
-import com.msos.android.sos.typesafeenum.AlertType;
+import com.msos.android.activity.service.FallDetectService;
+import com.msos.android.manager.AlertManager;
+import com.msos.android.manager.DeviceManager;
+import com.msos.android.typesafeenum.AlertType;
 
 import android.app.Activity;
 import android.app.AlertDialog;

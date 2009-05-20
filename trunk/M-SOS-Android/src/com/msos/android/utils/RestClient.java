@@ -1,4 +1,4 @@
-package com.msos.android.sos.utils;
+package com.msos.android.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -91,7 +91,7 @@ public class RestClient {
         	// Create the request
         	StringEntity se = new StringEntity(jsonObject.toString());
         	postMethod.setEntity(se);
-            Log.i(TAG,"Parameters: "+jsonObject.toString());
+            //Log.i(TAG,"Parameters: "+jsonObject.toString());
             postMethod.setParams(httpParams);
             HttpResponse response = httpClient.execute(postMethod);
             
@@ -103,7 +103,7 @@ public class RestClient {
                 // A Simple JSON Response Read
                 InputStream instream = entity.getContent();
                 String result= convertStreamToString(instream);
-                Log.i(TAG,"Response: "+result);
+                //Log.i(TAG,"Response: "+result);
  
                 // A Simple JSONObject Creation
                 JSONObject json = new JSONObject(result);

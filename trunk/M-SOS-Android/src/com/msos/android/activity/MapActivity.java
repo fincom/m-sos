@@ -1,4 +1,4 @@
-package com.msos.android.sos.activity;
+package com.msos.android.activity;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.MapView.LayoutParams;
-import com.msos.android.sos.listener.SosLocationListener;
+import com.msos.android.listener.SosLocationListener;
 
 /**
  * Map Activity : This class overrides the default Google Map Activity
@@ -81,7 +81,10 @@ public abstract class MapActivity extends com.google.android.maps.MapActivity{
 		mapView.displayZoomControls(true);
 		
 		// Initialize the zoom level
-		mc.setCenter(SosLocationListener.getCurrentGeoPoint());
+		if (SosLocationListener.getCurrentGeoPoint() != null){
+			mc.setCenter(SosLocationListener.getCurrentGeoPoint());
+		}
+		
 		mc.setZoom(17);
 
 		//---Add a location marker---
