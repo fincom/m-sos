@@ -1,4 +1,4 @@
-package com.msos.android.sos.listener;
+package com.msos.android.listener;
 
 
 import android.location.Location;
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.google.android.maps.GeoPoint;
-import com.msos.android.sos.activity.SosActivity;
+import com.msos.android.activity.SosActivity;
 
 /**
  * SosLocationListener

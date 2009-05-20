@@ -1,4 +1,4 @@
-package com.msos.android.sos.typesafeenum;
+package com.msos.android.typesafeenum;
 
 public class AlertType {
 

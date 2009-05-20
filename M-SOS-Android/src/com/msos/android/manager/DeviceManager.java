@@ -1,12 +1,12 @@
-package com.msos.android.sos.manager;
+package com.msos.android.manager;
 
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-import com.msos.android.sos.activity.SosActivity;
-import com.msos.android.sos.listener.SosLocationListener;
+import com.msos.android.activity.SosActivity;
+import com.msos.android.listener.SosLocationListener;
 
 import android.content.Context;
 import android.location.Address;
@@ -46,19 +46,11 @@ public class DeviceManager {
     /**
      * @return SIM MSISDN
      */
-    public String getMsisdn(){
+    public String getUniqueId(){
     	TelephonyManager telephonyManager = (TelephonyManager) context.getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
     	return telephonyManager.getLine1Number();
     }
     
-    /**
-     * @return the device IMEI
-     */
-    public String getImei(){
-    	TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-    	return telephonyManager.getDeviceId();
-    }
-	    
     /**
      * Enable the location service
      */

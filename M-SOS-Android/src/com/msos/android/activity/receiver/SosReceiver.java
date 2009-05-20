@@ -1,7 +1,7 @@
-package com.msos.android.sos.activity.receiver;
+package com.msos.android.activity.receiver;
 
-import com.msos.android.sos.activity.SosActivity;
-import com.msos.android.sos.activity.service.FallDetectService;
+import com.msos.android.activity.SosActivity;
+import com.msos.android.activity.service.FallDetectService;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.msos.android.sos.manager;
+package com.msos.android.manager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,11 +6,11 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.msos.android.sos.activity.R;
-import com.msos.android.sos.activity.SosActivity;
-import com.msos.android.sos.listener.SosLocationListener;
-import com.msos.android.sos.typesafeenum.AlertType;
-import com.msos.android.sos.utils.RestClient;
+import com.msos.android.activity.R;
+import com.msos.android.activity.SosActivity;
+import com.msos.android.listener.SosLocationListener;
+import com.msos.android.typesafeenum.AlertType;
+import com.msos.android.utils.RestClient;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -53,14 +53,14 @@ public class AlertManager {
 		 this.context = context;
 	 }
 	 
-	 private void broadcastAlert(AlertType alertType){
+	 /** Broadcast the alert using the Serveur service */
+	 private void broadcastAlert(String uniqueId, AlertType alertType, Location location){
 		 try {
 			 List<Object> parameter = new ArrayList<Object>();
-			 Location currentLocation = SosLocationListener.getCurrentLocation();
 			 parameter.add(alertType.getValue());
-			 parameter.add("231321");
-			 parameter.add(currentLocation.getLatitude());
-			 parameter.add(currentLocation.getLongitude());
+			 parameter.add(uniqueId);
+			 parameter.add(location.getLatitude());
+			 parameter.add(location.getLongitude());
 			 JSONObject result = RestClient.call("http://www.m-sos.com/json/Alert", "createAlert", 1, parameter);
 
 			 if (result.getBoolean("result")){
@@ -103,12 +103,15 @@ public class AlertManager {
 			 }
 		};
 		
+		final Location currentLocation = SosLocationListener.getCurrentLocation();
+		final String uniqueid = DeviceManager.getInstance(context).getUniqueId();
+			 
 		// Send the alert message in background
 		new Thread() {
 		 @Override public void run() {
-			 broadcastAlert(alertType);
+			 broadcastAlert(uniqueid,alertType,currentLocation);
 			 if (isVictime){
-				 sendAlertSMS(alertType);
+				 sendAlertSMS(alertType, currentLocation);
 			 }
 			 uiThreadCallback.post(runInUIThread);
 		 }
@@ -157,7 +160,7 @@ public class AlertManager {
 		PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0);
 
 		// Create a new notification
-		Notification notification = new Notification(R.drawable.icon, "S.O.S", System.currentTimeMillis());
+		Notification notification = new Notification(R.drawable.icon, "M-SOS", System.currentTimeMillis());
 		notification.setLatestEventInfo(context.getApplicationContext(), title, message, contentIntent);
 		notification.defaults |= Notification.DEFAULT_SOUND;
 		
@@ -172,7 +175,7 @@ public class AlertManager {
      * @param phoneNumber
      * @param message
      */
-    private void sendAlertSMS(AlertType alertType)
+    private void sendAlertSMS(AlertType alertType,Location location)
     {       
     	SharedPreferences preferences = SosActivity.getPreferences(context);
     	boolean smsNotificationEnabled = preferences.getBoolean("sos.notification.sms.enable", false);
@@ -181,7 +184,7 @@ public class AlertManager {
     	// If the notifications are enabled and the phone number has been set
     	if (smsNotificationEnabled && phoneNumber != null){
 
-    		String message =  context.getString(R.string.message_sms_alert);
+    		String message =  context.getString(R.string.message_sms_alert)+ location.getLatitude() + "/" + location.getLongitude();
 	        PendingIntent pi = PendingIntent.getActivity(context, 0, new Intent(context, SosActivity.class), 0);                
 	        SmsManager sms = SmsManager.getDefault();
 	        sms.sendTextMessage(phoneNumber, null, message.toString(), pi, null); 

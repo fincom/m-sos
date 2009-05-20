@@ -1,8 +1,8 @@
-package com.msos.android.sos.activity.service;
+package com.msos.android.activity.service;
 
-import com.msos.android.sos.activity.R;
-import com.msos.android.sos.activity.SosActivity;
-import com.msos.android.sos.manager.AlertManager;
+import com.msos.android.activity.R;
+import com.msos.android.activity.SosActivity;
+import com.msos.android.manager.AlertManager;
 
 import android.app.Service;
 import android.content.Context;

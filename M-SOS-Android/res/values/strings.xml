@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">S.O.S</string>
-    <string name="version_name">0.2.1</string>
+    <string name="app_name">M-SOS</string>
+    <string name="version_name">0.3</string>
     
     <!-- Tab Title -->
     <string name="tab1_title">Alerter</string>
@@ -23,8 +23,8 @@
     <string name="message_gps_disabled">Attention ! \n\nVotre GPS est désactivé, la localisation trouvée sera approximative.</string>
     <string name="message_sos_sent">S.O.S envoyé au serveur. </string>
     <string name="message_sos_not_sent">Le S.O.S n\'a pas pu être envoyé au serveur. </string>
-    <string name="message_about">S.O.S est une application développée par Ludovic Toinel &lt;ltoinel@gmail.com&gt;\n\nhttp://sos.geeek.org</string>
-    <string name="message_sms_alert">Ce SMS a été envoyé automatiquement par mon téléphone. Je suis actuellement en difficulté, venez m\'aider.</string>
+    <string name="message_about">M-SOS est une application développée par Ludovic Toinel &lt;ltoinel@gmail.com&gt;\n\nhttp://www.m-sos.com</string>
+    <string name="message_sms_alert">Ce SMS a été envoyé automatiquement par mon téléphone. Je suis actuellement en difficulté, venez m\'aider : </string>
     <string name="message_notification_sms_sent">Un SMS de notification a été envoyé à votre proche.</string>
     
     <!-- Dialogs -->  

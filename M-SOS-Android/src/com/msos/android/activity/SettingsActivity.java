@@ -1,4 +1,4 @@
-package com.msos.android.sos.activity;
+package com.msos.android.activity;
 
 import android.content.Context;
 import android.content.Intent;
