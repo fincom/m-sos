@@ -14,12 +14,18 @@
 	<key>PreferenceSpecifiers</key>
 	<array>
 		 <dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Notifiez un proche en cas de problème</string>
+		 </dict>
+		 <dict>
 				<key>Type</key>
 				<string>PSToggleSwitchSpecifier</string>
 				<key>Title</key>
-				<string>Active</string>
+				<string>Par SMS</string>
 				<key>Key</key>
-				<string>sms_notify_enabled</string>
+				<string>sms_notify</string>
 				<key>DefaultValue</key>
 				<true/>
 				<key>TrueValue</key>
@@ -29,17 +35,43 @@
 		 </dict>
 		 <dict>
 			<key>Type</key>
-			<string>PSGroupSpecifier</string>
+			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Compte Twitter</string>
+			<string>N° téléphone du proche</string>
+			<key>Key</key>
+			<string>sms_proche</string>
+			<key>DefaultValue</key>
+			<string></string>
+			<key>IsSecure</key>
+			<false/>
+			<key>KeyboardType</key>
+			<string>Alphabet</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+		 </dict>
+		 <dict>
+				<key>Type</key>
+				<string>PSToggleSwitchSpecifier</string>
+				<key>Title</key>
+				<string>Par TWITTER</string>
+				<key>Key</key>
+				<string>twitter_notify</string>
+				<key>DefaultValue</key>
+				<true/>
+				<key>TrueValue</key>
+				<string>YES</string>
+				<key>FalseValue</key>
+				<string>NO</string>
 		 </dict>
 		 <dict>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Personnel</string>
+			<string>Compte twitter du proche</string>
 			<key>Key</key>
-			<string>twitter_personel</string>
+			<string>twitter_proche</string>
 			<key>DefaultValue</key>
 			<string></string>
 			<key>IsSecure</key>
@@ -53,11 +85,31 @@
 		 </dict>
 		 <dict>
 			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Notifiez moi en cas d'alertes à proximité</string>
+		 </dict>
+		 <dict>
+				<key>Type</key>
+				<string>PSToggleSwitchSpecifier</string>
+				<key>Title</key>
+				<string>Active</string>
+				<key>Key</key>
+				<string>alert_notify</string>
+				<key>DefaultValue</key>
+				<true/>
+				<key>TrueValue</key>
+				<string>YES</string>
+				<key>FalseValue</key>
+				<string>NO</string>
+		 </dict>
+		 <dict>
+			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Du proche</string>
+			<string>Compte twitter personnel</string>
 			<key>Key</key>
-			<string>twitter_other</string>
+			<string>twitter_personel</string>
 			<key>DefaultValue</key>
 			<string></string>
 			<key>IsSecure</key>

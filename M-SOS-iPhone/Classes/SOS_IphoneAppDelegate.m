@@ -13,18 +13,43 @@
 
 @synthesize window;
 @synthesize tabBarController;
+@synthesize signupView;
 @synthesize sharedLocation;
 @synthesize alertManager;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-    //LocationListener singleton
+	//User default setting
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	
+	//LocationListener & Alert Manager singleton
 	self.sharedLocation = [LocationListener sharedLocation];
 	self.alertManager = [AlertListener alertManager];
 	
-    // Add the tab bar controller's current view as a subview of the window
-    [window addSubview:tabBarController.view];
+	//Signup view Controller
+	signupView = [[SignupControllerView alloc] initWithNibName:@"SignupControllerView" bundle:nil];
+	
+	//user has signup?
+	if([userDefaults boolForKey:@"userRegistered"] == FALSE)
+	{
+		//Are information completed ?
+		if([signupView verifSettings:userDefaults] == FALSE)
+		{
+			//Invite user to fill the setting
+			[window addSubview:signupView.view];
+		}else{
+		    [signupView signup:userDefaults];
+		}
+	}else{
+		//init MSOS
+		[self launchMSOS];
+	}
+	[userDefaults release];
 }
 
+-(void)launchMSOS: (BOOL) isRegistered {
+	// Add the tab bar controller's current view as a subview of the window
+	[window addSubview:tabBarController.view];
+}
 
 /*
 // Optional UITabBarControllerDelegate method
@@ -40,7 +65,10 @@
 
 
 - (void)dealloc {
-    [tabBarController release];
+	[signupView release];
+	[tabBarController release];
+	[sharedLocation release];
+	[alertManager release];
     [window release];
     [super dealloc];
 }

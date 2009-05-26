@@ -62,7 +62,7 @@
 	NSLog(changeJSON);
 	
 	
-	NSString *requestString = [NSString stringWithFormat:@"{\"id\":1,\"method\":\"%@\",\"params\":[%@]}",service,jsonString,nil];
+	NSString *requestString = [NSString stringWithFormat:@"{\"id\":1,\"method\":\"%@\",\"params\":%@}",service,jsonString,nil];
 	NSLog(requestString);
 	
 	
