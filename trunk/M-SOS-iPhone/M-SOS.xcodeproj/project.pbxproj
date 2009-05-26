@@ -37,9 +37,12 @@
 		3D0F639E0FB35A880057F3A1 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0F63980FB35A880057F3A1 /* MapViewController.m */; };
 		3D0F639F0FB35A880057F3A1 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0F639A0FB35A880057F3A1 /* SettingViewController.m */; };
 		3D0F63A00FB35A880057F3A1 /* ToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0F639C0FB35A880057F3A1 /* ToolsViewController.m */; };
+		3D364C740FCC4A52003A4BB6 /* SignupControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D364C720FCC4A52003A4BB6 /* SignupControllerView.m */; };
+		3D364C750FCC4A52003A4BB6 /* SignupControllerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D364C730FCC4A52003A4BB6 /* SignupControllerView.xib */; };
 		3D4E1B9A0FB44841006C6884 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D4E1B990FB44841006C6884 /* CoreLocation.framework */; };
 		3D6CDF760FB37DB400A3614B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6CDF750FB37DB400A3614B /* MapKit.framework */; };
 		3D6CDFD50FB385EC00A3614B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D6CDFD40FB385EC00A3614B /* Settings.bundle */; };
+		3DB3268A0FCCA584003341D9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DB326880FCCA584003341D9 /* Localizable.strings */; };
 		3DDA3DDF0FB567BA00BBB68F /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDA3DD40FB567BA00BBB68F /* NSObject+SBJSON.m */; };
 		3DDA3DE00FB567BA00BBB68F /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDA3DD60FB567BA00BBB68F /* NSString+SBJSON.m */; };
 		3DDA3DE10FB567BA00BBB68F /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDA3DD80FB567BA00BBB68F /* SBJSON.m */; };
@@ -93,10 +96,15 @@
 		3D0F639A0FB35A880057F3A1 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		3D0F639B0FB35A880057F3A1 /* ToolsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolsViewController.h; sourceTree = "<group>"; };
 		3D0F639C0FB35A880057F3A1 /* ToolsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolsViewController.m; sourceTree = "<group>"; };
+		3D364C710FCC4A52003A4BB6 /* SignupControllerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupControllerView.h; sourceTree = "<group>"; };
+		3D364C720FCC4A52003A4BB6 /* SignupControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupControllerView.m; sourceTree = "<group>"; };
+		3D364C730FCC4A52003A4BB6 /* SignupControllerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SignupControllerView.xib; path = Classes/SignupControllerView.xib; sourceTree = "<group>"; };
 		3D4E1B990FB44841006C6884 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3D6CDF750FB37DB400A3614B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3D6CDFD40FB385EC00A3614B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		3D83871B0FB88C000038EDD9 /* SOS-Iphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOS-Iphone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DB326890FCCA584003341D9 /* fr */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3DB3268B0FCCA599003341D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3DDA3DD20FB567BA00BBB68F /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		3DDA3DD30FB567BA00BBB68F /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		3DDA3DD40FB567BA00BBB68F /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -146,30 +154,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3D364C510FCC496A003A4BB6 /* JSON */,
 				3DFC0DD80FB6C68E00395AE0 /* MSOS */,
-				3DDA3DD20FB567BA00BBB68F /* JSON.h */,
-				3DDA3DD30FB567BA00BBB68F /* NSObject+SBJSON.h */,
-				3DDA3DD40FB567BA00BBB68F /* NSObject+SBJSON.m */,
-				3DDA3DD50FB567BA00BBB68F /* NSString+SBJSON.h */,
-				3DDA3DD60FB567BA00BBB68F /* NSString+SBJSON.m */,
-				3DDA3DD70FB567BA00BBB68F /* SBJSON.h */,
-				3DDA3DD80FB567BA00BBB68F /* SBJSON.m */,
-				3DDA3DD90FB567BA00BBB68F /* SBJsonBase.h */,
-				3DDA3DDA0FB567BA00BBB68F /* SBJsonBase.m */,
-				3DDA3DDB0FB567BA00BBB68F /* SBJsonParser.h */,
-				3DDA3DDC0FB567BA00BBB68F /* SBJsonParser.m */,
-				3DDA3DDD0FB567BA00BBB68F /* SBJsonWriter.h */,
-				3DDA3DDE0FB567BA00BBB68F /* SBJsonWriter.m */,
-				3D0F63950FB35A880057F3A1 /* AlertViewController.h */,
-				3D0F63960FB35A880057F3A1 /* AlertViewController.m */,
-				3D0F63970FB35A880057F3A1 /* MapViewController.h */,
-				3D0F63980FB35A880057F3A1 /* MapViewController.m */,
-				3D0F63990FB35A880057F3A1 /* SettingViewController.h */,
-				3D0F639A0FB35A880057F3A1 /* SettingViewController.m */,
-				3D0F639B0FB35A880057F3A1 /* ToolsViewController.h */,
-				3D0F639C0FB35A880057F3A1 /* ToolsViewController.m */,
-				28216C950DB411BC00E5133A /* AboutViewController.h */,
-				28216C960DB411BC00E5133A /* AboutViewController.m */,
 				1D3623240D0F684500981E51 /* SOS_IphoneAppDelegate.h */,
 				1D3623250D0F684500981E51 /* SOS_IphoneAppDelegate.m */,
 			);
@@ -209,8 +195,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3DB326880FCCA584003341D9 /* Localizable.strings */,
 				3D0F63700FB357510057F3A1 /* img */,
 				3D0F635E0FB3545A0057F3A1 /* Alert.xib */,
+				3D364C730FCC4A52003A4BB6 /* SignupControllerView.xib */,
 				3D0F63580FB354350057F3A1 /* Map.xib */,
 				3D0F635A0FB354350057F3A1 /* Tools.xib */,
 				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
@@ -254,23 +242,79 @@
 			name = img;
 			sourceTree = "<group>";
 		};
-		3DFC0DD80FB6C68E00395AE0 /* MSOS */ = {
+		3D364C510FCC496A003A4BB6 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				3DFC0DD90FB6C6C400395AE0 /* LocationListener.h */,
-				3DFC0DDA0FB6C6C400395AE0 /* LocationListener.m */,
+				3DDA3DD30FB567BA00BBB68F /* NSObject+SBJSON.h */,
+				3DDA3DD50FB567BA00BBB68F /* NSString+SBJSON.h */,
+				3DDA3DD40FB567BA00BBB68F /* NSObject+SBJSON.m */,
+				3DDA3DD60FB567BA00BBB68F /* NSString+SBJSON.m */,
+				3DDA3DD70FB567BA00BBB68F /* SBJSON.h */,
+				3DDA3DD80FB567BA00BBB68F /* SBJSON.m */,
+				3DDA3DD90FB567BA00BBB68F /* SBJsonBase.h */,
+				3DDA3DDA0FB567BA00BBB68F /* SBJsonBase.m */,
+				3DDA3DDB0FB567BA00BBB68F /* SBJsonParser.h */,
+				3DDA3DD20FB567BA00BBB68F /* JSON.h */,
+				3DDA3DDD0FB567BA00BBB68F /* SBJsonWriter.h */,
+				3DDA3DDE0FB567BA00BBB68F /* SBJsonWriter.m */,
+				3DDA3DDC0FB567BA00BBB68F /* SBJsonParser.m */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
+		3D364C520FCC4999003A4BB6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D0F63950FB35A880057F3A1 /* AlertViewController.h */,
+				3D364C720FCC4A52003A4BB6 /* SignupControllerView.m */,
+				3D0F63960FB35A880057F3A1 /* AlertViewController.m */,
+				3D0F63970FB35A880057F3A1 /* MapViewController.h */,
+				3D364C710FCC4A52003A4BB6 /* SignupControllerView.h */,
+				3D0F63980FB35A880057F3A1 /* MapViewController.m */,
+				3D0F63990FB35A880057F3A1 /* SettingViewController.h */,
+				3D0F639A0FB35A880057F3A1 /* SettingViewController.m */,
+				3D0F639B0FB35A880057F3A1 /* ToolsViewController.h */,
+				3D0F639C0FB35A880057F3A1 /* ToolsViewController.m */,
+				28216C950DB411BC00E5133A /* AboutViewController.h */,
+				28216C960DB411BC00E5133A /* AboutViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3D364C530FCC49B2003A4BB6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3DFC12AD0FB757FF00395AE0 /* ServicePlaceMark.h */,
+				3DFC12AE0FB757FF00395AE0 /* ServicePlaceMark.m */,
 				3DFC0EDF0FB6ED0000395AE0 /* LocationReverseGeoCoder.h */,
 				3DFC0EE00FB6ED0000395AE0 /* LocationReverseGeoCoder.m */,
 				3DFC0F7B0FB6F68800395AE0 /* HTTPServices.h */,
 				3DFC0F7C0FB6F68800395AE0 /* HTTPServices.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		3D364C540FCC49DB003A4BB6 /* Listeners */ = {
+			isa = PBXGroup;
+			children = (
+				3DFC0DDA0FB6C6C400395AE0 /* LocationListener.m */,
 				3DFC109A0FB71E2B00395AE0 /* AlertListener.h */,
 				3DFC109B0FB71E2B00395AE0 /* AlertListener.m */,
+				3DFC0DD90FB6C6C400395AE0 /* LocationListener.h */,
+			);
+			name = Listeners;
+			sourceTree = "<group>";
+		};
+		3DFC0DD80FB6C68E00395AE0 /* MSOS */ = {
+			isa = PBXGroup;
+			children = (
+				3D364C540FCC49DB003A4BB6 /* Listeners */,
+				3D364C530FCC49B2003A4BB6 /* Services */,
+				3D364C520FCC4999003A4BB6 /* Views */,
 				3DFC109D0FB71E4A00395AE0 /* Alert.h */,
 				3DFC109E0FB71E4A00395AE0 /* Alert.m */,
 				3DFC10A60FB725C800395AE0 /* DeviceManager.h */,
 				3DFC10A70FB725C800395AE0 /* DeviceManager.m */,
-				3DFC12AD0FB757FF00395AE0 /* ServicePlaceMark.h */,
-				3DFC12AE0FB757FF00395AE0 /* ServicePlaceMark.m */,
 			);
 			name = MSOS;
 			sourceTree = "<group>";
@@ -303,6 +347,14 @@
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "M-SOS" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				fr,
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* SOS-Iphone */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -338,6 +390,8 @@
 				3D0F638D0FB3576D0057F3A1 /* tab_tools.png in Resources */,
 				3D0F638E0FB3576D0057F3A1 /* title.png in Resources */,
 				3D6CDFD50FB385EC00A3614B /* Settings.bundle in Resources */,
+				3D364C750FCC4A52003A4BB6 /* SignupControllerView.xib in Resources */,
+				3DB3268A0FCCA584003341D9 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,10 +422,23 @@
 				3DFC109F0FB71E4A00395AE0 /* Alert.m in Sources */,
 				3DFC10A80FB725C800395AE0 /* DeviceManager.m in Sources */,
 				3DFC12AF0FB757FF00395AE0 /* ServicePlaceMark.m in Sources */,
+				3D364C740FCC4A52003A4BB6 /* SignupControllerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3DB326880FCCA584003341D9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DB326890FCCA584003341D9 /* fr */,
+				3DB3268B0FCCA599003341D9 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {

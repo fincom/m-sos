@@ -54,7 +54,7 @@
 			<key>Title</key>
 			<string>Groupe sanguin</string>
 			<key>Key</key>
-			<string>groupe_sanguin</string>
+			<string>blood_group</string>
 			<key>DefaultValue</key>
 			<string>Ap</string>
 			<key>Values</key>
@@ -90,7 +90,7 @@
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 			<key>Title</key>
-			<string>Notification SMS</string>
+			<string>Notifications</string>
 			<key>File</key>
 			<string>sms-notification</string>
 		</dict>

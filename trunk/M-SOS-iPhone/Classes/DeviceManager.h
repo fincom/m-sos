@@ -15,4 +15,6 @@
 
 -(NSString *)getUniqueID;
 -(NSString *)getPhoneNumber;
+-(NSString *)getCurrentLanguage;
+
 @end
