@@ -57,7 +57,7 @@
 	placemarks = nil;
 	
 	//Show PlaceMark for a current Alert, n'aura jamais lieu vu que l'iphone est mono Thread
-	NSString *keyword = [alertManager getAlertTypeCategory:(NSInteger)nil];
+	NSString *keyword = [alertManager getAlertTypeCategory:nil];
 	if(keyword != nil){
 		[self drawPlaceMarks:keyword];
 	}

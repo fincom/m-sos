@@ -85,6 +85,14 @@
 	if (dataReply == nil)
 	{
 		hasError = TRUE;
+	}else{
+		NSError* errorf = nil;
+		id responseD = [json objectWithString:returnString error:&errorf];
+		NSDictionary *responseDD = (NSDictionary *)responseD;
+		
+		if([[responseDD valueForKey:@"result"] boolValue] == FALSE){
+			hasError = TRUE;
+		}
 	}
 	
 	//Lets log HTTPResponse, for fun :)

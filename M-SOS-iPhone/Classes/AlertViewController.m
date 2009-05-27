@@ -17,6 +17,7 @@
 @synthesize alertType;
 @synthesize sharedLocation;
 @synthesize alertManager;
+@synthesize alertType;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -50,19 +51,19 @@
  }
 
 - (void)setTypeAlert:(id) sender { 
-	self.alertType = 4;
+	self.alertType = @"DOMESTIC";
 	[self preSendAlert];
 }
 - (void)setTypeAccident:(id) sender {    
-	self.alertType = 1;
+	self.alertType = @"ACCIDENT";
 	[self preSendAlert];
 }
 - (void)setTypeFire:(id) sender {    
-	self.alertType = 3;
+	self.alertType = @"FIRE";
 	[self preSendAlert];
 }
 - (void)setTypePerson:(id) sender {    
-	self.alertType = 2;
+	self.alertType = @"SANTE";
 	[self preSendAlert];
 }
 
