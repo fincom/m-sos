@@ -22,11 +22,11 @@
 	AlertListener* alertManager;
 	
 	Boolean isVictime;
-	NSInteger alertType;
+	NSString* alertType;
 	
 }
 
-@property NSInteger alertType;
+@property(nonatomic, retain) NSString* alertType;
 @property(nonatomic, retain) LocationListener* sharedLocation;
 @property(nonatomic, retain) AlertListener* alertManager;
 

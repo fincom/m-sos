@@ -10,9 +10,9 @@
 
 
 @interface Alert : NSObject {
-	NSInteger alertType;
+	NSString *alertType;
 }
 
-@property NSInteger alertType;
+@property(nonatomic, retain) NSString *alertType;
 
 @end

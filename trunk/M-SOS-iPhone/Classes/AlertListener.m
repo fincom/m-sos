@@ -63,8 +63,7 @@ static LocationListener *sharedMyAlert = nil;
 	//On gère le cas d'nne victime
 	if(buttonIndex +1 == 2){
 		[self sendAlertToJSONServer];
-		//[self sendTwittAlert];
-		//[self doCall];
+		[self doCall];
 	}else{
 		alert = nil;
 	}
@@ -109,38 +108,12 @@ static LocationListener *sharedMyAlert = nil;
 	return emergencyNumber;
 }
 
-//Send Twitter notification to someone :)
--(void)sendTwittAlert{
-	if([[NSUserDefaults standardUserDefaults] boolForKey:@"sms_notify_enabled"] == TRUE){
-		NSString* twittProche = [[NSUserDefaults standardUserDefaults] stringForKey:@"twitter_other"];
-		
-		//MSOS webservice Alert url
-		NSString* url = @"http://sos.geeek.org/twitter.php";
-		
-		NSString *requestString;
-		requestString = 
-		[
-		 [NSString alloc] 
-		 initWithFormat:@"&twittId=%@&imei=%@", 
-		 twittProche, [mobile getUniqueID]
-		 ];
-		
-		NSLog(requestString);
-		
-		HTTPServices *httpservice = [[HTTPServices alloc] sendHTTPRequest:url httpMethod:@"POST" requestString:requestString];
-		if([httpservice hasError]){
-			NSLog(@"La requête n'a pu aboutir");
-		}
-		
-	}
-}
-
 -(void)sendAlertToJSONServer{
 		
 		//Récupération des coordonnées GPS
 		CLLocationCoordinate2D locationde = [sharedLocation getCurrentLocation];
 	
-	NSLog(@"%f,%f,%@", locationde.latitude, locationde.longitude, [mobile getUniqueID]);
+	    NSLog(@"%f,%f,%@", locationde.latitude, locationde.longitude, [mobile getUniqueID]);
 		
 		NSString *longitude = 
 		[
@@ -155,18 +128,31 @@ static LocationListener *sharedMyAlert = nil;
 		 initWithFormat:@"%f", 
 		 locationde.latitude
 		 ];
+		
+	    NSString *alert_type = alert.alertType;
 	
-		NSString *alert_type = 
-		[
-		 [NSString alloc] 
-		 initWithFormat:@"%d", 
-		 alert.alertType
-		 ];
+		NSString *actAs = @"T";
+		
+		if([self isVictime]){
+			actAs = @"M";
+		}
+	
+	    //Twitt notify
+	    NSString *twittNotify = @"false";
+		NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+		if(([userDefaults boolForKey:@"sms_notify"] == TRUE) && [[userDefaults stringForKey:@"sms_proche"] compare:@""])
+		{
+			twittNotify = @"true";
+		}
+		if(([userDefaults boolForKey:@"twitter_notify"] == TRUE)  && [[userDefaults stringForKey:@"twitter_proche"] compare:@""])
+		{
+			twittNotify = @"true";
+		}
 	
 		NSString *service = @"createAlert";
 		
-		NSString *keyArray[4];
-		NSString *valueArray[4];
+		NSString *keyArray[6];
+		NSString *valueArray[6];
 		
 		keyArray[0] = @"alertType";
 		valueArray[0] = alert_type;
@@ -176,10 +162,13 @@ static LocationListener *sharedMyAlert = nil;
 		valueArray[2] = latitude;
 		keyArray[3] = @"longitude";
 		valueArray[3] = longitude;
-	
+		keyArray[4] = @"actAs";
+		valueArray[4] =	actAs;
+		keyArray[5] = @"twittNotify";
+		valueArray[5] =	twittNotify;
 		
 		NSMutableDictionary *params = [NSDictionary dictionaryWithObjects:(id *)valueArray
-											forKeys:(id *)keyArray count:4];
+											forKeys:(id *)keyArray count:6];
 	
 		NSArray *keys = [params allKeys];
 		for (id value in keys) {
@@ -194,46 +183,12 @@ static LocationListener *sharedMyAlert = nil;
 		}
 }
 
--(void)sendAlertToServer{
-	
-	//Récupération des coordonnées GPS
-	CLLocationCoordinate2D locationde = [sharedLocation getCurrentLocation];
-	
-	//MSOS webservice Alert url
-	NSString* url = @"http://sos.geeek.org/alert.php";
-	
-	NSString* locality;
-	
-	if([[sharedLocation getCurrentCity] isKindOfClass:[NSString class]]){
-		locality = [sharedLocation getCurrentCity];
-	}else{
-		
-		locality = @"Inconnue";
-	}
-	
-	NSString *requestString;
-	
-	requestString = 
-	[
-	 [NSString alloc] 
-	 initWithFormat:@"&latitude=%f&longitude=%f&imei=%@&city=%@&msisdn=%@&alertType=%d", 
-	 locationde.latitude, locationde.longitude, [mobile getUniqueID], locality, [mobile getPhoneNumber], alert.alertType
-	 ];
-	
-	NSLog(requestString);
-	
-	HTTPServices *httpservice = [[HTTPServices alloc] sendHTTPRequest:url httpMethod:@"POST" requestString:requestString];
-	if([httpservice hasError]){
-		NSLog(@"La requête n'a pu aboutir");
-	}
-}
-
 //
--(NSString *)getAlertTypeCategory:(NSInteger) alertType
+-(NSString *)getAlertTypeCategory:(NSString *) alertType
 {
 	NSString *category;
 	//Cas de la catégorie pour l'alerte courante
-	if(alertType == (NSInteger)nil && alert != nil)
+	if(alertType == nil && alert != nil)
 	{
 		alertType = alert.alertType;
 	}
@@ -241,13 +196,13 @@ static LocationListener *sharedMyAlert = nil;
 	if(alertType != (NSInteger)nil)
 	{
 		//Cas D'un alertType connu
-		if(alert.alertType == 1){
+		if(alert.alertType == @"FIRE"){
 			category = @"Pompiers";
-		}else if(alert.alertType == 2){
+		}else if(alert.alertType == @"SANTE"){
 			category = @"Hospitals";
-		}else if(alert.alertType == 3){
+		}else if(alert.alertType == @"ACCIDENT"){
 			category = @"Pompiers";
-		}else if(alert.alertType == 4){
+		}else if(alert.alertType == @"PERSON"){
 			category = @"Pompiers";
 		}
 		

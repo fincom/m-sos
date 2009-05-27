@@ -28,9 +28,7 @@
 + (id)alertManager;
 
 -(void)sendAlert:(Alert *)alert isVictime:(Boolean)whoCall;
--(void)sendAlertToServer;
 -(void)sendAlertToJSONServer;
--(void)sendTwittAlert;
 -(NSString *)getAlertTypeCategory:(NSInteger) alertType;
 
 -(NSString *) getEmergencyNumber;

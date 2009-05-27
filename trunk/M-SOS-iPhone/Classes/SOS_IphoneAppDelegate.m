@@ -40,10 +40,12 @@
 		    [signupView signup:userDefaults];
 		}
 	}else{
+		//Save Settings
+		[signupView update:userDefaults];
+		
 		//init MSOS
-		[self launchMSOS];
+		[self launchMSOS:TRUE];
 	}
-	[userDefaults release];
 }
 
 -(void)launchMSOS: (BOOL) isRegistered {
@@ -65,11 +67,7 @@
 
 
 - (void)dealloc {
-	[signupView release];
-	[tabBarController release];
-	[sharedLocation release];
-	[alertManager release];
-    [window release];
+	[window release];
     [super dealloc];
 }
 
