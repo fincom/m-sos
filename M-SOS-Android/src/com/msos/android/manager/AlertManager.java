@@ -31,7 +31,10 @@ import android.telephony.gsm.SmsManager;
  */
 public class AlertManager {
 
+	 // Application Context
 	 private Context context = null;
+	 
+	 // Singleton instance
 	 private static AlertManager instance = null;
 	 
 	 // Flags
@@ -56,24 +59,23 @@ public class AlertManager {
 	 /** Broadcast the alert using the Serveur service */
 	 private void broadcastAlert(String uniqueId, AlertType alertType, Location location){
 		 try {
-			 List<Object> parameter = new ArrayList<Object>();
-			 parameter.add(alertType.getValue());
-			 parameter.add(uniqueId);
-			 parameter.add(location.getLatitude());
-			 parameter.add(location.getLongitude());
-			 JSONObject result = RestClient.call("http://www.m-sos.com/json/Alert", "createAlert", 1, parameter);
+			 if (location != null){
 
-			 if (result.getBoolean("result")){
-				 // Todo
+				 List<Object> parameter = new ArrayList<Object>();
+				 parameter.add(alertType.getValue());
+				 parameter.add(uniqueId);
+				 parameter.add(location.getLatitude());
+				 parameter.add(location.getLongitude());
+				 JSONObject result = RestClient.call("http://www.m-sos.com/json/Alert", "createAlert", 1, parameter);
+	
+				 broadcastMessageSent = result.getBoolean("result");
 			 }
-			
+			 
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		 
 	 }
-
     
 	/**
 	 * Main alert method
@@ -140,7 +142,7 @@ public class AlertManager {
 			phoneNumber = "18";
 		} else if(AlertType.ALERT_DOMESTIC.equals(alertType)) {
 			phoneNumber = "15";
-		} else if(AlertType.ALERT_PERSON.equals(alertType)) {
+		} else if(AlertType.ALERT_SANTE.equals(alertType)) {
 			phoneNumber = "15";
 		} else {
 			phoneNumber = "112";
@@ -215,8 +217,6 @@ public class AlertManager {
     		Intent itent = new Intent(Intent.ACTION_CALL,Uri.parse("tel:"+phoneNumber));
     		itent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     		context.startActivity(itent);
-    		
-
     	}
     }   
 }

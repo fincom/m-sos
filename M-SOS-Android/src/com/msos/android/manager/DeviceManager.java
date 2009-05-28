@@ -23,8 +23,13 @@ import android.util.Log;
  */
 public class DeviceManager {
 
+	 // Application context
 	 private Context context = null;
+	 
+	 // Singleton instance
 	 private static DeviceManager instance = null;
+	 
+	 // Location listener
 	 private LocationListener locationListener = null;
 	 
 	/**

@@ -44,8 +44,6 @@ public abstract class MapActivity extends com.google.android.maps.MapActivity{
     	super.onDestroy();
     }
     
-    
-    
     /**
      * @see android.app.Activity#onKeyDown(int, android.view.KeyEvent)
      */
