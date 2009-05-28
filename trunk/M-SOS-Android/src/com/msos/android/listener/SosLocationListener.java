@@ -10,9 +10,10 @@ import com.google.android.maps.GeoPoint;
 import com.msos.android.activity.SosActivity;
 
 /**
- * SosLocationListener
+ * Location listener
  * 
  * @author Ludovic Toinel
+ * @version SVN: $Id:$
  */
 public class SosLocationListener implements LocationListener 
   {

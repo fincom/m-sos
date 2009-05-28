@@ -4,26 +4,27 @@ package com.msos.android.typesafeenum;
  * The Alert types
  * 
  * @author Ludovic Toinel
+ * @version SVN: $Id:$
  */
 public class AlertType {
 
 	/** Alert types */
-	public static AlertType ALERT_ACCIDENT = new AlertType(1);
-	public static AlertType ALERT_DOMESTIC = new AlertType(2);
-	public static AlertType ALERT_FIRE = new AlertType(3);
-	public static AlertType ALERT_SANTE = new AlertType(4);
+	public static AlertType ALERT_ACCIDENT = new AlertType("ACCIDENT");
+	public static AlertType ALERT_DOMESTIC = new AlertType("DOMESTIC");
+	public static AlertType ALERT_FIRE = new AlertType("FIRE");
+	public static AlertType ALERT_SANTE = new AlertType("SANTE");
 	
-	private int value;
+	private String value;
 	
 	/** Private constructor */
-	private AlertType(int value){
+	private AlertType(String value){
 		this.value = value;
 	}
 	
 	/**
 	 * @return the TypeSafeEnum value
 	 */
-	public int getValue(){
+	public String getValue(){
 		return value;
 	}
 

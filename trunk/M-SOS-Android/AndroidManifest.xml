@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.msos.android.activity"
+      package="com.msos.android"
       android:versionCode="2"
       android:versionName="0.4">
     
@@ -15,11 +15,12 @@
 
     <application android:icon="@drawable/icon" android:label="@string/app_name">
     
-    	<!--  Use Google Maps -->
+    	<!--  Libraries Used -->
     	<uses-library android:name="com.google.android.maps" />
-    
+        <uses-library android:name="android.test.runner" />
+         
     	<!--  Main Activity -->
-        <activity android:name="SosActivity" android:label="@string/app_name">
+        <activity android:name=".activity.SosActivity" android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -27,7 +28,7 @@
         </activity>
         	
         <!--  Settings Activity -->
-        <activity android:name="SettingsActivity" android:label="@string/app_name" />
+        <activity android:name=".activity.SettingsActivity" android:label="@string/app_name" />
         
         <!--  Boot receiver -->
         <receiver android:name=".receiver.SosReceiver" android:label="@string/app_name"> 
@@ -39,9 +40,17 @@
 	
         <!--  Fall detect Service -->
         <service android:name=".service.FallDetectService"/>
-         
+      
     </application>
 
+    <!--  Run instrumentation permission -->
+    <uses-permission android:name="android.permission.RUN_INSTRUMENTATION" />
+  
+    <!--  Tests instrumentation -->
+    <instrumentation android:name="com.msos.android.test.InstrumentationTestRunner"
+                     android:targetPackage="com.msos.android"
+                     android:label="M-SOS Tests"/>
+                     
 	<uses-sdk android:minSdkVersion="2"/>
 	
 </manifest> 

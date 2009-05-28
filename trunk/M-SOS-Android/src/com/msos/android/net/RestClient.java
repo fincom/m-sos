@@ -1,4 +1,4 @@
-package com.msos.android.utils;
+package com.msos.android.net;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,8 +24,9 @@ import android.util.Log;
  * A simple Rest Client
  * 
  * @author Ludovic Toinel
+ * @version SVN: $Id:$
  */
-public class RestClient {
+public abstract class RestClient {
 
 	// Log tag
 	private static String TAG = "M-SOS.RestClient";
@@ -66,7 +67,7 @@ public class RestClient {
      * @param mUrl The URL of location tracking server.
      * @param mLocationJSON The location data with time in JSON format.
      */
-    public static JSONObject call(String mUrl, String methodName, int id, List<Object> parameters) {
+    protected static JSONObject call(String mUrl, String methodName, int id, JSONObject params) {
       
     	HttpClient httpClient = new DefaultHttpClient();
         HttpPost postMethod = new HttpPost(mUrl);
@@ -76,16 +77,9 @@ public class RestClient {
         	HttpParams httpParams = new BasicHttpParams();
         	JSONObject jsonObject = new JSONObject();
 
-        	// Set Params
-        	JSONArray jsonArray = new JSONArray();
-        	int i = 0;
-        	for (Iterator<Object> iterator = parameters.iterator(); iterator.hasNext();) {
-        		jsonArray.put(iterator.next());
-				i++;
-			}
         	
         	// Set JSON Object
-        	jsonObject.put("params", jsonArray);
+        	jsonObject.put("params", params);
         	jsonObject.put("method", methodName);
         	jsonObject.put("id", id);
         	
@@ -104,7 +98,7 @@ public class RestClient {
  
                 // A Simple JSON Response Read
                 InputStream instream = entity.getContent();
-                String result= convertStreamToString(instream);
+                String result = convertStreamToString(instream);
                 Log.d(TAG,"Response: "+result);
  
                 // A Simple JSONObject Creation

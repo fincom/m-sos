@@ -2,7 +2,6 @@ package com.msos.android.activity;
 
 import java.util.List;
 
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -19,12 +18,14 @@ import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.MapView.LayoutParams;
+import com.msos.android.R;
 import com.msos.android.listener.SosLocationListener;
 
 /**
  * Map Activity : This class overrides the default Google Map Activity
  * 
  * @author Ludovic Toinel
+ * @version SVN: $Id:$
  */
 public abstract class MapActivity extends com.google.android.maps.MapActivity{
 

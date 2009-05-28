@@ -20,6 +20,7 @@ import android.util.Log;
  * Device Manager
  * 
  * @author Ludovic Toinel
+ * @version SVN: $Id:$
  */
 public class DeviceManager {
 
