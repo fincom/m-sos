@@ -1,7 +1,7 @@
-package com.msos.android.activity.receiver;
+package com.msos.android.receiver;
 
 import com.msos.android.activity.SosActivity;
-import com.msos.android.activity.service.FallDetectService;
+import com.msos.android.service.FallDetectService;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -12,6 +12,7 @@ import android.util.Log;
  * SosReceiver
  * 
  * @author Ludovic Toinel
+ * @version SVN: $Id:$
  */
 public class SosReceiver extends BroadcastReceiver {
 

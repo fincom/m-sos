@@ -1,17 +1,5 @@
 package com.msos.android.manager;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.msos.android.activity.R;
-import com.msos.android.activity.SosActivity;
-import com.msos.android.listener.SosLocationListener;
-import com.msos.android.typesafeenum.AlertType;
-import com.msos.android.utils.RestClient;
-
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -24,10 +12,17 @@ import android.net.Uri;
 import android.os.Handler;
 import android.telephony.gsm.SmsManager;
 
+import com.msos.android.R;
+import com.msos.android.activity.SosActivity;
+import com.msos.android.listener.SosLocationListener;
+import com.msos.android.net.SosRestClient;
+import com.msos.android.typesafeenum.AlertType;
+
 /**
  * Alert Manager : This class is responsible to contact emergencies
  * 
  * @author Ludovic Toinel
+ * @version SVN: $Id:$
  */
 public class AlertManager {
 
@@ -56,26 +51,7 @@ public class AlertManager {
 		 this.context = context;
 	 }
 	 
-	 /** Broadcast the alert using the Serveur service */
-	 private void broadcastAlert(String uniqueId, AlertType alertType, Location location){
-		 try {
-			 if (location != null){
 
-				 List<Object> parameter = new ArrayList<Object>();
-				 parameter.add(alertType.getValue());
-				 parameter.add(uniqueId);
-				 parameter.add(location.getLatitude());
-				 parameter.add(location.getLongitude());
-				 JSONObject result = RestClient.call("http://www.m-sos.com/json/Alert", "createAlert", 1, parameter);
-	
-				 broadcastMessageSent = result.getBoolean("result");
-			 }
-			 
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
-		 
-	 }
     
 	/**
 	 * Main alert method
@@ -111,7 +87,7 @@ public class AlertManager {
 		// Send the alert message in background
 		new Thread() {
 		 @Override public void run() {
-			 broadcastAlert(uniqueid,alertType,currentLocation);
+			 broadcastMessageSent = SosRestClient.createAlert(uniqueid,alertType,currentLocation.getLatitude(), currentLocation.getLongitude(),isVictime);
 			 if (isVictime){
 				 sendAlertSMS(alertType, currentLocation);
 			 }

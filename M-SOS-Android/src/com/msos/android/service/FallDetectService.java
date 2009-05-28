@@ -1,4 +1,4 @@
-package com.msos.android.activity.service;
+package com.msos.android.service;
 
 import android.app.Service;
 import android.content.Context;
@@ -9,7 +9,7 @@ import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.util.Log;
 
-import com.msos.android.activity.R;
+import com.msos.android.R;
 import com.msos.android.activity.SosActivity;
 import com.msos.android.manager.AlertManager;
 
@@ -17,11 +17,12 @@ import com.msos.android.manager.AlertManager;
  * This service detect when a person fall
  * 
  * @author Ludovic Toinel
+ * @version SVN: $Id:$
  */
 public class FallDetectService extends Service implements SensorListener{
 
 	// Log tag
-	private static String TAG = "M-SOS.FallDetectService";
+	private static String TAG = "FallDetectService";
 	
 	// Sensor
     private SensorManager mSensorMgr = null;
@@ -73,7 +74,7 @@ public class FallDetectService extends Service implements SensorListener{
     
     	if(sensor == SensorManager.SENSOR_ACCELEROMETER && !fallDetected){
     	      
-    		  // Calcul de l'acceleration
+    		  // Acceleration magnitude
     		  float accelMag = (values[0]*values[0]+values[1]*values[1]+values[2]*values[2]);
     	       
     	 	  //Log.i("FallDetectService.onSensorChanged", String.valueOf(values[0]*values[0]) + "|" +  String.valueOf(values[1]*values[1]) + "|" +  String.valueOf(values[2]*values[2]) );

@@ -1,10 +1,5 @@
 package com.msos.android.activity;
 
-import com.msos.android.activity.service.FallDetectService;
-import com.msos.android.manager.AlertManager;
-import com.msos.android.manager.DeviceManager;
-import com.msos.android.typesafeenum.AlertType;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -23,10 +18,17 @@ import android.widget.TabHost;
 import android.widget.ToggleButton;
 import android.widget.TabHost.TabSpec;
 
+import com.msos.android.R;
+import com.msos.android.manager.AlertManager;
+import com.msos.android.manager.DeviceManager;
+import com.msos.android.service.FallDetectService;
+import com.msos.android.typesafeenum.AlertType;
+
 /**
- *  SOS Activity : This class manage all the user events
+ * SOS Activity : This class manage all the user events
  * 
  * @author Ludovic Toinel
+ * @version SVN: $Id:$
  */
 public class SosActivity extends MapActivity{
 
@@ -42,9 +44,7 @@ public class SosActivity extends MapActivity{
         super.onCreate(savedInstanceState);
            
         // Enable GPS
-        boolean gpsEnabled = DeviceManager.getInstance(this).enableLocationService(this);
-        
-        if(!gpsEnabled){
+        if(!DeviceManager.getInstance(this).enableLocationService(this)){
     		displayInfoBox(getString(R.string.warning),getString(R.string.message_gps_disabled));
         }
         
@@ -64,8 +64,6 @@ public class SosActivity extends MapActivity{
     }
 
 
-
-
 	/**
      * Called when the activity is destroyed
      * 
@@ -75,7 +73,6 @@ public class SosActivity extends MapActivity{
     protected void onDestroy() {
     	
     	super.onDestroy();
-    	
     }
     
     
