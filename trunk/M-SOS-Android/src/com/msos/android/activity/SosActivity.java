@@ -207,7 +207,7 @@ public class SosActivity extends MapActivity{
         final Button buttonPerson= (Button) findViewById(R.id.button_person);
         buttonPerson.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
-            	displayContextDialog(AlertType.ALERT_PERSON);
+            	displayContextDialog(AlertType.ALERT_SANTE);
             }
         });
         

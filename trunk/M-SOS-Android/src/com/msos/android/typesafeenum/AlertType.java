@@ -1,12 +1,17 @@
 package com.msos.android.typesafeenum;
 
+/**
+ * The Alert types
+ * 
+ * @author Ludovic Toinel
+ */
 public class AlertType {
 
 	/** Alert types */
 	public static AlertType ALERT_ACCIDENT = new AlertType(1);
-	public static AlertType ALERT_PERSON = new AlertType(2);
+	public static AlertType ALERT_DOMESTIC = new AlertType(2);
 	public static AlertType ALERT_FIRE = new AlertType(3);
-	public static AlertType ALERT_DOMESTIC = new AlertType(4);
+	public static AlertType ALERT_SANTE = new AlertType(4);
 	
 	private int value;
 	

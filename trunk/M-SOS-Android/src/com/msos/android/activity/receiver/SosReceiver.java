@@ -15,6 +15,9 @@ import android.util.Log;
  */
 public class SosReceiver extends BroadcastReceiver {
 
+	// Log tag
+	private static String TAG = "M-SOS:SosReceiver";
+	
 	 /* the intent source*/ 
     static final String ACTION = "android.intent.action.BOOT_COMPLETED"; 
     
@@ -30,9 +33,9 @@ public class SosReceiver extends BroadcastReceiver {
 	       // if Fall detection is enabled we start the service
 	       if (enableFallDetection){
 		       context.startService(new Intent(context, FallDetectService.class));
-		       Log.d("SosReceiver.onReceive", "Fall detection service lauched");
+		       Log.d(TAG, "Fall detection service lauched");
 	       } else {
-	    	   Log.d("SosReceiver.onReceive", "Fall detection disabled");
+	    	   Log.d(TAG, "Fall detection disabled");
 	       }
 	  }
 	 }

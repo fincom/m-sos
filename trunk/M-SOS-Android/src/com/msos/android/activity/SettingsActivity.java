@@ -1,5 +1,13 @@
 package com.msos.android.activity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.json.JSONObject;
+
+import com.msos.android.manager.DeviceManager;
+import com.msos.android.utils.RestClient;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,4 +37,25 @@ public class SettingsActivity extends PreferenceActivity {
         final Intent intent = new Intent(context, SettingsActivity.class);
         context.startActivity(intent);
     }
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+		
+
+		 List<Object> parameter = new ArrayList<Object>();
+		 parameter.add(DeviceManager.getInstance(this).getUniqueId());
+		 
+
+		 parameter.add(uniqueId);
+		 parameter.add(location.getLatitude());
+		 parameter.add(location.getLongitude());
+		 JSONObject result = RestClient.call("http://www.m-sos.com/json/User", "signup", 1, parameter);
+
+		 broadcastMessageSent = result.getBoolean("result");
+		
+	}
+    
+    
+    
 }

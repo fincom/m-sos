@@ -53,8 +53,18 @@ public class SosLocationListener implements LocationListener
 			}
 		}
 		
+		/**
+		 * Display the human readable current location
+		 * 
+		 * @return
+		 */
 		public static String getLocation(){
-			String location = "Lat: "+ currentLocation.getLatitude() +"\nLong: "+currentLocation.getLongitude();
+			String location;
+			if (currentLocation != null){
+				 location = "Lat: "+ currentLocation.getLatitude() +"\nLong: "+currentLocation.getLongitude();
+			} else {
+				 location = "Location not found !";
+			}
 			return location;
 		}
 		

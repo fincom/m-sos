@@ -27,7 +27,8 @@ import android.util.Log;
  */
 public class RestClient {
 
-	private static String TAG = "RestClient";
+	// Log tag
+	private static String TAG = "M-SOS.RestClient";
 	
 	/**
 	 * @param is
@@ -91,7 +92,8 @@ public class RestClient {
         	// Create the request
         	StringEntity se = new StringEntity(jsonObject.toString());
         	postMethod.setEntity(se);
-            //Log.i(TAG,"Parameters: "+jsonObject.toString());
+        	
+            Log.d(TAG,"Parameters: "+jsonObject.toString());
             postMethod.setParams(httpParams);
             HttpResponse response = httpClient.execute(postMethod);
             
@@ -103,7 +105,7 @@ public class RestClient {
                 // A Simple JSON Response Read
                 InputStream instream = entity.getContent();
                 String result= convertStreamToString(instream);
-                //Log.i(TAG,"Response: "+result);
+                Log.d(TAG,"Response: "+result);
  
                 // A Simple JSONObject Creation
                 JSONObject json = new JSONObject(result);
@@ -111,7 +113,7 @@ public class RestClient {
             }
             
         } catch (Exception e) {
-            Log.e("Exception", e.getMessage());
+            Log.e(TAG, e.getMessage());
         } finally {
             postMethod.abort();
         }
