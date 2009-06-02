@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Iterator;
-import java.util.List;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -15,7 +13,6 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.util.Log;
@@ -62,12 +59,48 @@ public abstract class RestClient {
 	        return sb.toString();
 	    }
 	 
-	 
 	/**
      * @param mUrl The URL of location tracking server.
      * @param mLocationJSON The location data with time in JSON format.
      */
-    protected static JSONObject call(String mUrl, String methodName, int id, JSONObject params) {
+    protected static JSONObject get(String mUrl) {
+      
+    	HttpClient httpClient = new DefaultHttpClient();
+        HttpPost postMethod = new HttpPost(mUrl);
+        
+        try {
+
+            HttpResponse response = httpClient.execute(postMethod);
+            
+            // Get hold of the response entity
+            HttpEntity entity = response.getEntity();
+ 
+            if (entity != null) {
+ 
+                // A Simple JSON Response Read
+                InputStream instream = entity.getContent();
+                String result = convertStreamToString(instream);
+                Log.d(TAG,"Response: "+result);
+ 
+                // A Simple JSONObject Creation
+                JSONObject json = new JSONObject(result);
+                return json;
+            }
+            
+        } catch (Exception e) {
+            Log.e(TAG, e.getMessage());
+        } finally {
+            postMethod.abort();
+        }
+        
+        return null;
+    }
+    
+	/**
+     * @param mUrl The URL of location tracking server.
+     * @param mLocationJSON The location data with time in JSON format.
+     */
+    protected static JSONObject post(String mUrl, String methodName, int id, JSONObject params) {
       
     	HttpClient httpClient = new DefaultHttpClient();
         HttpPost postMethod = new HttpPost(mUrl);

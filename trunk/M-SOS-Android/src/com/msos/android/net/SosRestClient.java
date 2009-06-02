@@ -35,7 +35,7 @@ public class SosRestClient extends RestClient{
 					 params.put("actAs", "T");
 				 }
 				 
-				 JSONObject result = RestClient.call("http://www.m-sos.com/json/Alert", "createAlert", 1, params);
+				 JSONObject result = RestClient.post("http://www.m-sos.com/json/Alert", "createAlert", 1, params);
 	
 				 return result.getBoolean("result");
 			 }
@@ -84,7 +84,7 @@ public class SosRestClient extends RestClient{
 			 params.put("lang",lang);
 			 
 			 // Call
-			 JSONObject result = RestClient.call("http://www.m-sos.com/json/User", "signup", 1, params);
+			 JSONObject result = RestClient.post("http://www.m-sos.com/json/User", "signup", 1, params);
 
 			 return result.getBoolean("result");
 			 

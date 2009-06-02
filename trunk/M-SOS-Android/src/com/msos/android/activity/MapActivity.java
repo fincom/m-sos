@@ -20,6 +20,7 @@ import com.google.android.maps.Overlay;
 import com.google.android.maps.MapView.LayoutParams;
 import com.msos.android.R;
 import com.msos.android.listener.SosLocationListener;
+import com.msos.android.net.GoogleRestClient;
 
 /**
  * Map Activity : This class overrides the default Google Map Activity
@@ -93,7 +94,25 @@ public abstract class MapActivity extends com.google.android.maps.MapActivity{
 		listOfOverlays.add(mapOverlay);        
 
 		mapView.invalidate();
+		
+		
 	}
+	
+	
+	public void loadNearElements(){
+		GeoPoint mapCenter = mapView.getMapCenter();
+		
+		String latitude = String.valueOf(mapCenter.getLatitudeE6() / 1E6);
+		String longitude = String.valueOf(mapCenter.getLongitudeE6() / 1E6);
+		
+		String latitudeSpan = String.valueOf(mapView.getLatitudeSpan() / 1E6);
+		String longitudeSpan = String.valueOf(mapView.getLongitudeSpan() / 1E6);
+		
+		GoogleRestClient.getElements("Hostpitals", latitude, longitude, latitudeSpan, longitudeSpan);
+		
+	}
+	
+	
 	
 	/**
 	 * Re-center the icon on the map
