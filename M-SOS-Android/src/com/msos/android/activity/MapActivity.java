@@ -2,6 +2,10 @@ package com.msos.android.activity;
 
 import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -99,17 +103,49 @@ public abstract class MapActivity extends com.google.android.maps.MapActivity{
 	}
 	
 	
-	public void loadNearElements(){
-		GeoPoint mapCenter = mapView.getMapCenter();
+	public void drawElements(MapView mapView, Canvas canvas, String element){
 		
-		String latitude = String.valueOf(mapCenter.getLatitudeE6() / 1E6);
-		String longitude = String.valueOf(mapCenter.getLongitudeE6() / 1E6);
+		if (mapView == null){
+			return;
+		}
+		try {
+			
+			GeoPoint mapCenter = mapView.getMapCenter();
+			
+			// Get latitude & longitude
+			String latitude = String.valueOf(mapCenter.getLatitudeE6() / 1E6);
+			String longitude = String.valueOf(mapCenter.getLongitudeE6() / 1E6);
+			
+			// Get latitude span & longitude span
+			String latitudeSpan = String.valueOf(mapView.getLatitudeSpan() / 1E6);
+			String longitudeSpan = String.valueOf(mapView.getLongitudeSpan() / 1E6);
+			
+			// Get elements
+			JSONObject elements = GoogleRestClient.getElements(element, latitude, longitude, latitudeSpan, longitudeSpan);
+			
+			JSONArray results = elements.getJSONArray("results");
+			if (results != null && results.length() != 0){
+					
+					for (int i = 0; i < elements.length(); i++) {
+	
+						JSONObject result = results.getJSONObject(i);
+						
+				        //---translate the GeoPoint to screen pixels---
+				        Point screenPts = new Point();
+				        GeoPoint p = new GeoPoint((int)(result.getDouble("lat")*1E6),(int) (result.getDouble("lng")*1E6));
+				        mapView.getProjection().toPixels(p, screenPts);
+			
+				        //---add the marker---
+				        Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.placemark);         
+				        canvas.drawBitmap(bmp, screenPts.x-25, screenPts.y-60, null);    
+				        
+					}
+			}
 		
-		String latitudeSpan = String.valueOf(mapView.getLatitudeSpan() / 1E6);
-		String longitudeSpan = String.valueOf(mapView.getLongitudeSpan() / 1E6);
 		
-		GoogleRestClient.getElements("Hostpitals", latitude, longitude, latitudeSpan, longitudeSpan);
-		
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
@@ -128,6 +164,7 @@ public abstract class MapActivity extends com.google.android.maps.MapActivity{
 		} else {
 			Log.d("MainActivity.refreshMapLocation","Couldn't refresh location on the map");
 		}
+		
 	}
 	
 
@@ -158,6 +195,9 @@ public abstract class MapActivity extends com.google.android.maps.MapActivity{
 		        Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.placemark);         
 		        canvas.drawBitmap(bmp, screenPts.x-25, screenPts.y-60, null);     
 	        }
+	        
+	        //drawElements(mapView,canvas,"Hospitals");
+	        
 	        return true;
 	    }
 		
@@ -171,7 +211,7 @@ public abstract class MapActivity extends com.google.android.maps.MapActivity{
 		        //Toast.makeText(getBaseContext(), address, Toast.LENGTH_SHORT).show();
 	        	String location = SosLocationListener.getLocation();
 	        	Toast.makeText(getBaseContext(), location, Toast.LENGTH_SHORT).show();
-	        	
+	    		
 	            return true;
 	            
 	        } else {
