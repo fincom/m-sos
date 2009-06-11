@@ -67,11 +67,11 @@ public class DeviceManager {
     	// If GPS is enabled
     	if (isGpsEnabled(lm)){
     		locationListener = new SosLocationListener(lm.getLastKnownLocation(LocationManager.GPS_PROVIDER),activity);
-    		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10000, 20, locationListener);
+    		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
     		return true;
     	} else {
     		 locationListener = new SosLocationListener(lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER),activity);
-    		lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 10000, 20, locationListener);
+    		lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
     		return false;
     	}
     }

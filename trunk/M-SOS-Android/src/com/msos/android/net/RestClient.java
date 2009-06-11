@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -66,7 +67,7 @@ public abstract class RestClient {
     protected static JSONObject get(String mUrl) {
       
     	HttpClient httpClient = new DefaultHttpClient();
-        HttpPost postMethod = new HttpPost(mUrl);
+    	HttpGet postMethod = new HttpGet(mUrl);
         
         try {
 
