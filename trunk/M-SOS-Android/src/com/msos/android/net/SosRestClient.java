@@ -3,8 +3,8 @@ package com.msos.android.net;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.msos.android.businessobject.Notification;
-import com.msos.android.businessobject.Profil;
+import com.msos.android.beans.Notification;
+import com.msos.android.beans.Profil;
 import com.msos.android.typesafeenum.AlertType;
 
 /**
@@ -15,6 +15,9 @@ import com.msos.android.typesafeenum.AlertType;
  */
 public class SosRestClient extends RestClient{
 
+	// M-SOS Server URI
+	private static final String SERVER_URI = "http://www.m-sos.com/json/";
+	
 	 /** 
 	  * Broadcast the alert using the M-SOS platform 
 	  */
@@ -35,7 +38,7 @@ public class SosRestClient extends RestClient{
 					 params.put("actAs", "T");
 				 }
 				 
-				 JSONObject result = RestClient.post("http://www.m-sos.com/json/Alert", "createAlert", 1, params);
+				 JSONObject result = RestClient.post(SERVER_URI+"Alert", "createAlert", 1, params);
 	
 				 return result.getBoolean("result");
 			 }
@@ -84,7 +87,7 @@ public class SosRestClient extends RestClient{
 			 params.put("lang",lang);
 			 
 			 // Call
-			 JSONObject result = RestClient.post("http://www.m-sos.com/json/User", "signup", 1, params);
+			 JSONObject result = RestClient.post(SERVER_URI+"User", "signup", 1, params);
 
 			 return result.getBoolean("result");
 			 

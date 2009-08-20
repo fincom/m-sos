@@ -16,6 +16,8 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
 import org.json.JSONObject;
 
+import com.msos.android.log.Tag;
+
 import android.util.Log;
 
 /**
@@ -26,9 +28,6 @@ import android.util.Log;
  */
 public abstract class RestClient {
 
-	// Log tag
-	private static String TAG = "M-SOS.RestClient";
-	
 	/**
 	 * @param is
 	 * @return
@@ -81,7 +80,7 @@ public abstract class RestClient {
                 // A Simple JSON Response Read
                 InputStream instream = entity.getContent();
                 String result = convertStreamToString(instream);
-                Log.d(TAG,"Response: "+result);
+                Log.d(Tag.MSOS,"Response: "+result);
  
                 // A Simple JSONObject Creation
                 JSONObject json = new JSONObject(result);
@@ -89,7 +88,7 @@ public abstract class RestClient {
             }
             
         } catch (Exception e) {
-            Log.e(TAG, e.getMessage());
+            Log.e(Tag.MSOS, e.getMessage());
         } finally {
             postMethod.abort();
         }
@@ -121,7 +120,7 @@ public abstract class RestClient {
         	StringEntity se = new StringEntity(jsonObject.toString());
         	postMethod.setEntity(se);
         	
-            Log.d(TAG,"Parameters: "+jsonObject.toString());
+            Log.d(Tag.MSOS,"Parameters: "+jsonObject.toString());
             postMethod.setParams(httpParams);
             HttpResponse response = httpClient.execute(postMethod);
             
@@ -133,7 +132,7 @@ public abstract class RestClient {
                 // A Simple JSON Response Read
                 InputStream instream = entity.getContent();
                 String result = convertStreamToString(instream);
-                Log.d(TAG,"Response: "+result);
+                Log.d(Tag.MSOS,"Response: "+result);
  
                 // A Simple JSONObject Creation
                 JSONObject json = new JSONObject(result);
@@ -141,7 +140,7 @@ public abstract class RestClient {
             }
             
         } catch (Exception e) {
-            Log.e(TAG, e.getMessage());
+            Log.e(Tag.MSOS, e.getMessage());
         } finally {
             postMethod.abort();
         }

@@ -23,7 +23,8 @@ import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.MapView.LayoutParams;
 import com.msos.android.R;
-import com.msos.android.listener.SosLocationListener;
+import com.msos.android.listener.LocationListener;
+import com.msos.android.log.Tag;
 import com.msos.android.net.GoogleRestClient;
 
 /**
@@ -39,7 +40,6 @@ public abstract class MapActivity extends com.google.android.maps.MapActivity{
 	private MapController mc = null;
 	private GeoPoint p = null;
 	
-
     /**
      * Called when the activity is destroyed
      * 
@@ -79,14 +79,14 @@ public abstract class MapActivity extends com.google.android.maps.MapActivity{
 		
 		// Add a zoom
 		LinearLayout zoomLayout = (LinearLayout)findViewById(R.id.zoom);  
-		View zoomView = mapView.getZoomControls(); 
+		View zoomView = mapView.getZoomControls();
 		zoomLayout.removeAllViews();
 		zoomLayout.addView(zoomView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)); 
 		mapView.displayZoomControls(true);
 		
 		// Initialize the zoom level
-		if (SosLocationListener.getCurrentGeoPoint() != null){
-			mc.setCenter(SosLocationListener.getCurrentGeoPoint());
+		if (LocationListener.getCurrentGeoPoint() != null){
+			mc.setCenter(LocationListener.getCurrentGeoPoint());
 		}
 		
 		mc.setZoom(17);
@@ -154,15 +154,15 @@ public abstract class MapActivity extends com.google.android.maps.MapActivity{
 	 * Re-center the icon on the map
 	 */
 	public void refreshMapLocation(){
-		Log.d("MainActivity.refreshMapLocation","Refresh map location");
+		Log.d(Tag.MSOS,"Refresh map location");
 		
-	    p = SosLocationListener.getCurrentGeoPoint();
+	    p = LocationListener.getCurrentGeoPoint();
 
 		// Animate the map on the point
 		if (p != null && mc !=null){
 			mc.animateTo(p);
 		} else {
-			Log.d("MainActivity.refreshMapLocation","Couldn't refresh location on the map");
+			Log.d(Tag.MSOS,"Couldn't refresh location on the map");
 		}
 		
 	}
@@ -209,7 +209,7 @@ public abstract class MapActivity extends com.google.android.maps.MapActivity{
 
 	        	//String address = DeviceManager.getInstance(getParent()).getAddress();
 		        //Toast.makeText(getBaseContext(), address, Toast.LENGTH_SHORT).show();
-	        	String location = SosLocationListener.getLocation();
+	        	String location = LocationListener.getLocation();
 	        	Toast.makeText(getBaseContext(), location, Toast.LENGTH_SHORT).show();
 	    		
 	            return true;

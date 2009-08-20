@@ -1,4 +1,4 @@
-package com.msos.android.businessobject;
+package com.msos.android.beans;
 
 /**
  * The User profil

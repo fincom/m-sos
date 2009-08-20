@@ -5,15 +5,11 @@ package com.msos.android.test;
 
 import android.test.AndroidTestCase;
 
-import com.msos.android.businessobject.Notification;
-import com.msos.android.businessobject.Profil;
-import com.msos.android.net.GoogleRestClient;
-import com.msos.android.net.SosRestClient;
-import com.msos.android.typesafeenum.AlertType;
-
 /**
+ * Junit for GoogleRestClient
+ * 
  * @author Ludovic Toinel
- *
+ * @version SVN: $Id:$
  */
 public class GoogleRestClientTest extends AndroidTestCase {
 	
@@ -31,7 +27,4 @@ public class GoogleRestClientTest extends AndroidTestCase {
 		//GoogleRestClient.getElements("Hostpitals", latitude, longitude, latitudeSpan, longitudeSpan);
 	}
 	
-
-
-
 }

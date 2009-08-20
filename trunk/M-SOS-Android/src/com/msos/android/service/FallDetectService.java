@@ -3,7 +3,9 @@ package com.msos.android.service;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.hardware.SensorListener;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.IBinder;
@@ -11,6 +13,7 @@ import android.util.Log;
 
 import com.msos.android.R;
 import com.msos.android.activity.SosActivity;
+import com.msos.android.log.Tag;
 import com.msos.android.manager.AlertManager;
 
 /**
@@ -19,14 +22,11 @@ import com.msos.android.manager.AlertManager;
  * @author Ludovic Toinel
  * @version SVN: $Id:$
  */
-public class FallDetectService extends Service implements SensorListener{
-
-	// Log tag
-	private static String TAG = "FallDetectService";
+public class FallDetectService extends Service implements SensorEventListener {
 	
 	// Sensor
     private SensorManager mSensorMgr = null;
-    
+
     // Media player
     private static MediaPlayer mp = null;
     
@@ -48,11 +48,13 @@ public class FallDetectService extends Service implements SensorListener{
             
             // Android sensor Manager
             mSensorMgr = (SensorManager)this.getSystemService(Context.SENSOR_SERVICE);
-            if (!mSensorMgr.registerListener(this, SensorManager.SENSOR_ACCELEROMETER,SensorManager.SENSOR_DELAY_NORMAL)) {
-                Log.e(TAG, "No suited sensor found");
+            Sensor sensor = mSensorMgr.getSensorList(SensorManager.SENSOR_ACCELEROMETER).get(0);
+            
+            if (!mSensorMgr.registerListener(this,sensor,SensorManager.SENSOR_DELAY_NORMAL)){
+                Log.e(Tag.MSOS, "No suited sensor found");
                 stopSelf();
             } else {
-                Log.i(TAG, "SensorListener found");
+                Log.i(Tag.MSOS, "SensorListener found");
             }
             
             sensibilityLevel = Float.parseFloat(SosActivity.getPreferences(getApplicationContext()).getString("sos.falldetection.sensibility", "120"));
@@ -70,19 +72,21 @@ public class FallDetectService extends Service implements SensorListener{
 	/**
      * @see android.hardware.SensorListener#onSensorChanged(int, float[])
      */
-    public void onSensorChanged(int sensor, float[] values){
+    public void onSensorChanged(SensorEvent event) {
     
-    	if(sensor == SensorManager.SENSOR_ACCELEROMETER && !fallDetected){
+    	
+    	if(event.sensor.getType() == SensorManager.SENSOR_ACCELEROMETER && !fallDetected){
     	      
+    		
     		  // Acceleration magnitude
-    		  float accelMag = (values[0]*values[0]+values[1]*values[1]+values[2]*values[2]);
+    		  float accelMag = (event.values[0]*event.values[0]+event.values[1]*event.values[1]+event.values[2]*event.values[2]);
     	       
     	 	  //Log.i("FallDetectService.onSensorChanged", String.valueOf(values[0]*values[0]) + "|" +  String.valueOf(values[1]*values[1]) + "|" +  String.valueOf(values[2]*values[2]) );
 	    	   
     	      if (((lastAccelMag - accelMag) > sensibilityLevel) && !fallDetected)
     	      {
     	    	   	  fallDetected = true;
-    	              Log.v(TAG,"Force Detected");
+    	              Log.v(Tag.MSOS,"Force Detected");
 
     	              // Play alarm
     	              if (mp == null || !mp.isPlaying()){
@@ -131,13 +135,6 @@ public class FallDetectService extends Service implements SensorListener{
 		return null;
 	}
 
-
-	/**
-	 * @see android.hardware.SensorListener#onAccuracyChanged(int, int)
-	 */
-	public void onAccuracyChanged(int sensor, int accuracy) {
-		// Nothing
-	}
 	
 	/**
 	 * Stop the alarm
@@ -160,4 +157,11 @@ public class FallDetectService extends Service implements SensorListener{
 	public static boolean isFallDetected(){
 		return fallDetected;
 	}
+
+
+	public void onAccuracyChanged(Sensor sensor, int accuracy) {
+		// Nothing
+	}
+
+
 }
