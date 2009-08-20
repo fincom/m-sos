@@ -14,7 +14,7 @@ import android.telephony.gsm.SmsManager;
 
 import com.msos.android.R;
 import com.msos.android.activity.SosActivity;
-import com.msos.android.listener.SosLocationListener;
+import com.msos.android.listener.LocationListener;
 import com.msos.android.net.SosRestClient;
 import com.msos.android.typesafeenum.AlertType;
 
@@ -50,7 +50,6 @@ public class AlertManager {
 	 private AlertManager(Context context){
 		 this.context = context;
 	 }
-	 
 
     
 	/**
@@ -81,7 +80,7 @@ public class AlertManager {
 			 }
 		};
 		
-		final Location currentLocation = SosLocationListener.getCurrentLocation();
+		final Location currentLocation = LocationListener.getCurrentLocation();
 		final String uniqueid = DeviceManager.getInstance(context).getUniqueId();
 			 
 		// Send the alert message in background

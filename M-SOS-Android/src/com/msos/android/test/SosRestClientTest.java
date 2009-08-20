@@ -5,21 +5,20 @@ package com.msos.android.test;
 
 import android.test.AndroidTestCase;
 
-import com.msos.android.businessobject.Notification;
-import com.msos.android.businessobject.Profil;
+import com.msos.android.beans.Notification;
+import com.msos.android.beans.Profil;
 import com.msos.android.net.SosRestClient;
 import com.msos.android.typesafeenum.AlertType;
 
 /**
+ * InstrumentationTestRunner
+ * 
  * @author Ludovic Toinel
- *
+ * @version SVN: $Id:$
  */
 public class SosRestClientTest extends AndroidTestCase {
 	
-    static final String LOG_TAG = "SosRestClientTest";
-    
     private static String uniqueId;
-    
 
 	@Override
 	protected void setUp() throws Exception {

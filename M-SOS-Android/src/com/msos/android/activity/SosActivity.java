@@ -19,6 +19,7 @@ import android.widget.ToggleButton;
 import android.widget.TabHost.TabSpec;
 
 import com.msos.android.R;
+import com.msos.android.log.Tag;
 import com.msos.android.manager.AlertManager;
 import com.msos.android.manager.DeviceManager;
 import com.msos.android.service.FallDetectService;
@@ -98,10 +99,10 @@ public class SosActivity extends MapActivity{
 		// if Fall detection is enabled we start the service
 		if (enableFallDetection){
 			 this.startService(new Intent(this, FallDetectService.class));
-		     Log.d("SosActivity.onStop", "Fall detection service lauched");
+		     Log.d(Tag.MSOS, "Fall detection service lauched");
 		} else {
 			 this.stopService(new Intent(this, FallDetectService.class));
-			 Log.d("SosActivity.onStop", "Fall detection disabled");
+			 Log.d(Tag.MSOS, "Fall detection disabled");
 		}
 	}
 
@@ -233,7 +234,7 @@ public class SosActivity extends MapActivity{
             		mp.setLooping(true);
             		mp.start();
         	   } else {
-        		   mp.stop();
+        		   	mp.stop();
 		       }
             }
             

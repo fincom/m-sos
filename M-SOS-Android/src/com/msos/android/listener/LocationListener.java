@@ -2,12 +2,12 @@ package com.msos.android.listener;
 
 
 import android.location.Location;
-import android.location.LocationListener;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.google.android.maps.GeoPoint;
 import com.msos.android.activity.SosActivity;
+import com.msos.android.log.Tag;
 
 /**
  * Location listener
@@ -15,7 +15,7 @@ import com.msos.android.activity.SosActivity;
  * @author Ludovic Toinel
  * @version SVN: $Id:$
  */
-public class SosLocationListener implements LocationListener 
+public class LocationListener implements android.location.LocationListener 
   {
 		// Current location
 		private static Location currentLocation = null;
@@ -29,13 +29,13 @@ public class SosLocationListener implements LocationListener
 		 * @param location
 		 * @param activity
 		 */
-		public SosLocationListener(Location location,SosActivity activity){
+		public LocationListener(Location location,SosActivity activity){
 			
 			currentLocation = location;
 			this.sosActivity = activity;
 			
 			if (currentLocation != null){
-				Log.d("SosLocationListener.constructor","Location found");
+				Log.d(Tag.MSOS,"Location found");
 				sosActivity.refreshMapLocation();
 			}
 		}
@@ -95,12 +95,12 @@ public class SosLocationListener implements LocationListener
          * @see android.location.LocationListener#onLocationChanged(android.location.Location)
          */
         public void onLocationChanged(Location location) {
-        	Log.d("SosLocationListener.onLocationChanged","Location changed");
+        	Log.d(Tag.MSOS,"Location changed");
            	if (location != null) {
            		currentLocation = location;
            		sosActivity.refreshMapLocation();
         	} else {
-        		Log.d("SosLocationListener.onLocationChanged","Location is null");
+        		Log.d(Tag.MSOS,"Location is null");
         	}
         }
 

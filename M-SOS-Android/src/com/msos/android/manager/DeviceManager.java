@@ -5,16 +5,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-import com.msos.android.activity.SosActivity;
-import com.msos.android.listener.SosLocationListener;
-
 import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.LocationListener;
 import android.location.LocationManager;
 import android.telephony.TelephonyManager;
-import android.util.Log;
+
+import com.msos.android.activity.SosActivity;
+import com.msos.android.listener.LocationListener;
 
 /**
  * Device Manager
@@ -61,16 +59,16 @@ public class DeviceManager {
      * Enable the location service
      */
     public boolean enableLocationService(SosActivity activity){
-    	Log.d("enableLocationService", "Start");
+    	
     	LocationManager lm = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
 
     	// If GPS is enabled
     	if (isGpsEnabled(lm)){
-    		locationListener = new SosLocationListener(lm.getLastKnownLocation(LocationManager.GPS_PROVIDER),activity);
+    		//locationListener = new LocationListener(lm.getLastKnownLocation(LocationManager.GPS_PROVIDER),activity);
     		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
     		return true;
     	} else {
-    		 locationListener = new SosLocationListener(lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER),activity);
+    		//locationListener = new LocationListener(lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER),activity);
     		lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
     		return false;
     	}
@@ -110,8 +108,8 @@ public class DeviceManager {
 
 		try {
 			List<Address> addresses = geoCoder.getFromLocation(
-			        SosLocationListener.getCurrentLatitude(), 
-			        SosLocationListener.getCurrentLongitude(), 1);
+			        LocationListener.getCurrentLatitude(), 
+			        LocationListener.getCurrentLongitude(), 1);
 
             String add = "";
             if (addresses.size() > 0) 
@@ -144,8 +142,8 @@ public class DeviceManager {
 	
 		try {
 			List<Address> addresses = geoCoder.getFromLocation(
-			    SosLocationListener.getCurrentLatitude(), 
-			    SosLocationListener.getCurrentLongitude(), 1);
+			    LocationListener.getCurrentLatitude(), 
+			    LocationListener.getCurrentLongitude(), 1);
 
 	        if (addresses.size() > 0) 
 	        {

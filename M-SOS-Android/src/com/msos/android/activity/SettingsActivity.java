@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
 import com.msos.android.R;
-import com.msos.android.businessobject.Notification;
-import com.msos.android.businessobject.Profil;
+import com.msos.android.beans.Notification;
+import com.msos.android.beans.Profil;
 import com.msos.android.manager.DeviceManager;
 import com.msos.android.net.SosRestClient;
 

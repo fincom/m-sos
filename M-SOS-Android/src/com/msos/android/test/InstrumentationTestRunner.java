@@ -3,6 +3,12 @@ package com.msos.android.test;
 import junit.framework.TestSuite;
 import android.test.InstrumentationTestSuite;
 
+/**
+ * InstrumentationTestRunner
+ * 
+ * @author Ludovic Toinel
+ * @version SVN: $Id:$
+ */
 public class InstrumentationTestRunner extends
 		android.test.InstrumentationTestRunner {
 	

@@ -1,6 +1,7 @@
 package com.msos.android.receiver;
 
 import com.msos.android.activity.SosActivity;
+import com.msos.android.log.Tag;
 import com.msos.android.service.FallDetectService;
 
 import android.content.BroadcastReceiver;
@@ -15,12 +16,9 @@ import android.util.Log;
  * @version SVN: $Id:$
  */
 public class SosReceiver extends BroadcastReceiver {
-
-	// Log tag
-	private static String TAG = "M-SOS:SosReceiver";
 	
 	 /* the intent source*/ 
-    static final String ACTION = "android.intent.action.BOOT_COMPLETED"; 
+    private static final String ACTION = "android.intent.action.BOOT_COMPLETED"; 
     
 	 /**
 	 * @see android.content.BroadcastReceiver#onReceive(android.content.Context, android.content.Intent)
@@ -34,9 +32,9 @@ public class SosReceiver extends BroadcastReceiver {
 	       // if Fall detection is enabled we start the service
 	       if (enableFallDetection){
 		       context.startService(new Intent(context, FallDetectService.class));
-		       Log.d(TAG, "Fall detection service lauched");
+		       Log.d(Tag.MSOS, "Fall detection service lauched");
 	       } else {
-	    	   Log.d(TAG, "Fall detection disabled");
+	    	   Log.d(Tag.MSOS, "Fall detection disabled");
 	       }
 	  }
 	 }

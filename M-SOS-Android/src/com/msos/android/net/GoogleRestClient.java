@@ -3,6 +3,8 @@ package com.msos.android.net;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.msos.android.log.Tag;
+
 import android.util.Log;
 
 /**
@@ -12,8 +14,6 @@ import android.util.Log;
  * @version SVN: $Id:$
  */
 public class GoogleRestClient extends RestClient{
-
-	private static String TAG = "M-SOS.GoogleRestClient";
 	
 	 /** 
 	  * Broadcast the alert using the M-SOS platform 
@@ -24,11 +24,11 @@ public class GoogleRestClient extends RestClient{
 			 JSONObject result = RestClient.get("http://ajax.googleapis.com/ajax/services/search/local?v=1.0&q=category:"+category+"&sll="+latitude+","+longitude+"&sspn="+latitudeSpan+","+longitudeSpan+"&rsz=large");
 			 
 			 if (result == null){
-				 Log.w(TAG,"Google LocalSearch error : No result found");
+				 Log.w(Tag.MSOS,"Google LocalSearch error : No result found");
 			 } else if (200 == result.getInt("responseStatus")){
 				return result.getJSONObject("responseData");
 			 } else {
-				 Log.w(TAG,"Google LocalSearch error : "+ result.getInt("responseDetails"));
+				 Log.w(Tag.MSOS,"Google LocalSearch error : "+ result.getInt("responseDetails"));
 			 }
 		} catch (JSONException e) {
 			e.printStackTrace();
