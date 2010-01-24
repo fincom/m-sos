@@ -3,6 +3,8 @@ package com.msos.android.net;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.location.Location;
+
 import com.msos.android.beans.Notification;
 import com.msos.android.beans.Profil;
 import com.msos.android.typesafeenum.AlertType;
@@ -21,15 +23,15 @@ public class SosRestClient extends RestClient{
 	 /** 
 	  * Broadcast the alert using the M-SOS platform 
 	  */
-	 public static boolean createAlert(String uniqueId, AlertType alertType, double latitude, double longitude, boolean isVictime){
+	 public static boolean createAlert(String uniqueId, AlertType alertType, Location location, boolean isVictime){
 		 try {
-			 if (latitude != 0 && longitude != 0){
+			 if (location != null){
 
 				 JSONObject params = new JSONObject();
 				 params.put("uniqueId", uniqueId);
 				 params.put("alertType", alertType.getValue());
-				 params.put("latitude", String.valueOf(latitude));
-				 params.put("longitude",  String.valueOf(longitude));
+				 params.put("latitude", String.valueOf(location.getLatitude()));
+				 params.put("longitude",  String.valueOf(location.getLongitude()));
 			     params.put("twittNotify", String.valueOf(false));
 			     
 				 if (isVictime){

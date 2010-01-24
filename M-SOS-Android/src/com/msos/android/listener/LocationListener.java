@@ -29,15 +29,8 @@ public class LocationListener implements android.location.LocationListener
 		 * @param location
 		 * @param activity
 		 */
-		public LocationListener(Location location,SosActivity activity){
-			
-			currentLocation = location;
+		public LocationListener(SosActivity activity){
 			this.sosActivity = activity;
-			
-			if (currentLocation != null){
-				Log.d(Tag.MSOS,"Location found");
-				sosActivity.refreshMapLocation();
-			}
 		}
 		
 		/**
@@ -61,26 +54,13 @@ public class LocationListener implements android.location.LocationListener
 		 */
 		public static String getLocation(){
 			String location;
+			
 			if (currentLocation != null){
 				 location = "Lat: "+ currentLocation.getLatitude() +"\nLong: "+currentLocation.getLongitude();
 			} else {
-				 location = "Location not found !";
+				 location = "Location inconnue";
 			}
 			return location;
-		}
-		
-		/**
-		 * @return the current latitude
-		 */
-		public static double getCurrentLatitude(){
-			return currentLocation.getLatitude();
-		}
-		
-		/**
-		 * @return the current longitude
-		 */
-		public static double getCurrentLongitude(){
-			return currentLocation.getLongitude();
 		}
 		
 		
@@ -91,17 +71,22 @@ public class LocationListener implements android.location.LocationListener
 			return currentLocation;
 		}
 		
+		/**
+		 * Set the current location
+		 */
+		public void setCurrentLocation(Location location){
+			if (location != null){
+				currentLocation = location;
+           		sosActivity.refreshMapLocation();
+			}
+		}
+		
         /**
          * @see android.location.LocationListener#onLocationChanged(android.location.Location)
          */
         public void onLocationChanged(Location location) {
         	Log.d(Tag.MSOS,"Location changed");
-           	if (location != null) {
-           		currentLocation = location;
-           		sosActivity.refreshMapLocation();
-        	} else {
-        		Log.d(Tag.MSOS,"Location is null");
-        	}
+        	setCurrentLocation(location);
         }
 
 		/**
@@ -121,8 +106,7 @@ public class LocationListener implements android.location.LocationListener
 		/**
 		 * @see android.location.LocationListener#onStatusChanged(java.lang.String, int, android.os.Bundle)
 		 */
-		public void onStatusChanged(String provider, int status,
-				Bundle extras) {
+		public void onStatusChanged(String provider, int status, Bundle extras) {
 			// Nothing
 		}
   }        
