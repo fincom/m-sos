@@ -6,6 +6,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +27,7 @@ import com.msos.android.manager.AlertManager;
 import com.msos.android.manager.DeviceManager;
 import com.msos.android.service.FallDetectService;
 import com.msos.android.typesafeenum.AlertType;
+import com.nullwire.trace.ExceptionHandler;
 
 /**
  * SOS Activity : This class manage all the user events
@@ -43,7 +47,11 @@ public class SosActivity extends MapActivity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-           
+        
+        // Remote Exception handler
+        ExceptionHandler.register(this,"http://www.m-sos.com/stacktrace.php");
+        
+        	
         // Enable GPS
         if(!DeviceManager.getInstance(this).enableLocationService(this)){
     		displayInfoBox(getString(R.string.warning),getString(R.string.message_gps_disabled));
@@ -298,7 +306,15 @@ public class SosActivity extends MapActivity{
          		
          	 // About
          	 case R.id.options_menu_about :
-         		displayInfoBox(getString(R.string.app_name)+ " " + getString(R.string.version_name) , getString(R.string.message_about));
+         		
+         		String version = "";
+         		try {
+         			PackageManager pm = getPackageManager();
+         			PackageInfo pi = pm.getPackageInfo(this.getPackageName(), 0);
+         			version = pi.versionName;
+         		} catch (NameNotFoundException e) { }
+    			
+         		displayInfoBox(getString(R.string.app_name)+ " " + version, getString(R.string.message_about));
          		return true;
          	
              // Quit

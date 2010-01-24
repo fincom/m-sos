@@ -82,11 +82,13 @@ public class AlertManager {
 		
 		final Location currentLocation = LocationListener.getCurrentLocation();
 		final String uniqueid = DeviceManager.getInstance(context).getUniqueId();
-			 
+		
+
 		// Send the alert message in background
 		new Thread() {
 		 @Override public void run() {
-			 broadcastMessageSent = SosRestClient.createAlert(uniqueid,alertType,currentLocation.getLatitude(), currentLocation.getLongitude(),isVictime);
+			 broadcastMessageSent = SosRestClient.createAlert(uniqueid,alertType,currentLocation,isVictime);
+			 
 			 if (isVictime){
 				 sendAlertSMS(alertType, currentLocation);
 			 }
@@ -112,13 +114,13 @@ public class AlertManager {
 	private Uri getEmergencyNumber(AlertType alertType) {
 		String phoneNumber;
 		if (AlertType.ALERT_ACCIDENT.equals(alertType)){
-			phoneNumber = "18";
+			phoneNumber = "112";
 		} else if(AlertType.ALERT_FIRE.equals(alertType)) {
-			phoneNumber = "18";
+			phoneNumber = "112";
 		} else if(AlertType.ALERT_DOMESTIC.equals(alertType)) {
-			phoneNumber = "15";
+			phoneNumber = "112";
 		} else if(AlertType.ALERT_SANTE.equals(alertType)) {
-			phoneNumber = "15";
+			phoneNumber = "112";
 		} else {
 			phoneNumber = "112";
 		}

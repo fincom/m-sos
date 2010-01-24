@@ -1,13 +1,14 @@
 package com.msos.android.manager;
 
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
 import android.content.Context;
 import android.location.Address;
+import android.location.Criteria;
 import android.location.Geocoder;
+import android.location.Location;
 import android.location.LocationManager;
 import android.telephony.TelephonyManager;
 
@@ -52,7 +53,7 @@ public class DeviceManager {
      */
     public String getUniqueId(){
     	TelephonyManager telephonyManager = (TelephonyManager) context.getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
-    	return telephonyManager.getLine1Number();
+    	return telephonyManager.getDeviceId();
     }
     
     /**
@@ -61,15 +62,22 @@ public class DeviceManager {
     public boolean enableLocationService(SosActivity activity){
     	
     	LocationManager lm = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
-
+    	locationListener = new LocationListener(activity);
+    	
+    	
     	// If GPS is enabled
-    	if (isGpsEnabled(lm)){
-    		//locationListener = new LocationListener(lm.getLastKnownLocation(LocationManager.GPS_PROVIDER),activity);
+    	if (lm.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+    		locationListener.setCurrentLocation(lm.getLastKnownLocation(LocationManager.GPS_PROVIDER));
     		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+    		
     		return true;
+    	
+    	// Else Best-effort
     	} else {
-    		//locationListener = new LocationListener(lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER),activity);
-    		lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+    		String bestProvider = lm.getBestProvider(new Criteria(), true);
+    		locationListener.setCurrentLocation(lm.getLastKnownLocation(bestProvider));
+    		lm.requestLocationUpdates(bestProvider, 0, 0, locationListener);
+    		
     		return false;
     	}
     }
@@ -81,20 +89,6 @@ public class DeviceManager {
     	LocationManager lm = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
     	lm.removeUpdates(locationListener);
     }
-    
-    /**
-     * @param lm The Location Manager
-     * @return true if the GPS is enabled
-     */
-    public boolean isGpsEnabled(LocationManager lm){
-    	List<String> locationProvidersEnabled = lm.getProviders(true);
-     	for (Iterator<String> iterator = locationProvidersEnabled.iterator(); iterator.hasNext();) {
-     		String provideName = iterator.next();
-     		if (LocationManager.GPS_PROVIDER.equals(provideName)) return true;
-     	}
-     	return false;
-    }
-    
 
     
     /**
@@ -105,30 +99,30 @@ public class DeviceManager {
     public String getAddress(){
     	
         Geocoder geoCoder = new Geocoder(context, Locale.getDefault());
-
-		try {
-			List<Address> addresses = geoCoder.getFromLocation(
-			        LocationListener.getCurrentLatitude(), 
-			        LocationListener.getCurrentLongitude(), 1);
-
-            String add = "";
-            if (addresses.size() > 0) 
-            {
-                for (int i=0; i<addresses.get(0).getMaxAddressLineIndex(); i++){
-                   add += addresses.get(0).getAddressLine(i) + "\n";
-                }
-                
-                add += addresses.get(0).getLocality()+ "\n";
-                add += addresses.get(0).getCountryName()+ "\n";
-                return add;
-            }
-
-            
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+        Location location = LocationListener.getCurrentLocation();
+        
+        if (location != null){
+			try {
+				List<Address> addresses = geoCoder.getFromLocation(
+						location.getLatitude(), 
+						location.getLongitude(), 1);
+	
+	            String address = "";
+	            if (addresses != null && addresses.size() > 0)
+	            {
+	                for (int i=0; i<addresses.get(0).getMaxAddressLineIndex(); i++){
+	                	address += addresses.get(0).getAddressLine(i) + "\n";
+	                }
+	                
+	                address += addresses.get(0).getLocality()+ "\n";
+	                address += addresses.get(0).getCountryName()+ "\n";
+	                return address;
+	            }
+	            
+			} catch (IOException e) {}
+        }
 			
-        return "inconnue";
+        return "Adresse inconnue";
     }
     
     /**
@@ -139,21 +133,24 @@ public class DeviceManager {
     public String getLocality(){
     	
         Geocoder geoCoder = new Geocoder( context, Locale.getDefault());
+        Location location = LocationListener.getCurrentLocation();
+       
+        if (location != null){
+			try {
+				List<Address> addresses = geoCoder.getFromLocation(
+					location.getLatitude(), 
+					location.getLongitude(), 1);
 	
-		try {
-			List<Address> addresses = geoCoder.getFromLocation(
-			    LocationListener.getCurrentLatitude(), 
-			    LocationListener.getCurrentLongitude(), 1);
-
-	        if (addresses.size() > 0) 
-	        {
-	        	 return addresses.get(0).getLocality();
-	        }
+		        if (addresses.size() > 0) 
+		        {
+		        	 return addresses.get(0).getLocality();
+		        }
+	        
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+        }
         
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-        return "inconnue";
+        return "Locatité inconnue";
     }
 }

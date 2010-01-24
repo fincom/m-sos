@@ -13,18 +13,16 @@ import android.graphics.Point;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
-import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
-import com.google.android.maps.MapView.LayoutParams;
 import com.msos.android.R;
 import com.msos.android.listener.LocationListener;
 import com.msos.android.log.Tag;
+import com.msos.android.manager.DeviceManager;
 import com.msos.android.net.GoogleRestClient;
 
 /**
@@ -78,11 +76,9 @@ public abstract class MapActivity extends com.google.android.maps.MapActivity{
 		mc  = mapView.getController();
 		
 		// Add a zoom
-		LinearLayout zoomLayout = (LinearLayout)findViewById(R.id.zoom);  
-		View zoomView = mapView.getZoomControls();
-		zoomLayout.removeAllViews();
-		zoomLayout.addView(zoomView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)); 
-		mapView.displayZoomControls(true);
+		mapView.setBuiltInZoomControls(true);
+		
+		//mapView.displayZoomControls(true);
 		
 		// Initialize the zoom level
 		if (LocationListener.getCurrentGeoPoint() != null){
@@ -196,7 +192,7 @@ public abstract class MapActivity extends com.google.android.maps.MapActivity{
 		        canvas.drawBitmap(bmp, screenPts.x-25, screenPts.y-60, null);     
 	        }
 	        
-	        //drawElements(mapView,canvas,"Hospitals");
+	       // drawElements(mapView,canvas,"Hospitals");
 	        
 	        return true;
 	    }
@@ -207,11 +203,9 @@ public abstract class MapActivity extends com.google.android.maps.MapActivity{
 	        //---when user lifts his finger---
 	        if (event.getAction() == 1) {                
 
-	        	//String address = DeviceManager.getInstance(getParent()).getAddress();
-		        //Toast.makeText(getBaseContext(), address, Toast.LENGTH_SHORT).show();
-	        	String location = LocationListener.getLocation();
-	        	Toast.makeText(getBaseContext(), location, Toast.LENGTH_SHORT).show();
-	    		
+	        	String address = DeviceManager.getInstance(getParent()).getAddress();
+		        Toast.makeText(getBaseContext(), address, Toast.LENGTH_SHORT).show();
+
 	            return true;
 	            
 	        } else {

@@ -82,10 +82,15 @@ public abstract class RestClient {
                 String result = convertStreamToString(instream);
                 Log.d(Tag.MSOS,"Response: "+result);
  
-                // A Simple JSONObject Creation
-                JSONObject json = new JSONObject(result);
-                return json;
+                if (!result.equals("")){
+                	// A Simple JSONObject Creation
+                	JSONObject json = new JSONObject(result);
+                	return json;
+                }
             }
+            
+            Log.e(Tag.MSOS,"HTTP Error "+ response.getStatusLine());
+            
             
         } catch (Exception e) {
             Log.e(Tag.MSOS, e.getMessage());
@@ -104,7 +109,8 @@ public abstract class RestClient {
       
     	HttpClient httpClient = new DefaultHttpClient();
         HttpPost postMethod = new HttpPost(mUrl);
-        
+       
+        Log.i(Tag.MSOS,"HTTP POST : " + mUrl + " method : "+methodName + " parameters : "+params.toString());
         try {
         	// Prepare parameters
         	HttpParams httpParams = new BasicHttpParams();
@@ -132,12 +138,17 @@ public abstract class RestClient {
                 // A Simple JSON Response Read
                 InputStream instream = entity.getContent();
                 String result = convertStreamToString(instream);
-                Log.d(Tag.MSOS,"Response: "+result);
+                Log.i(Tag.MSOS,"HTTP Response: "+result);
  
-                // A Simple JSONObject Creation
-                JSONObject json = new JSONObject(result);
-                return json;
-            }
+                if (!result.equals("")){
+	                // A Simple JSONObject Creation
+	                JSONObject json = new JSONObject(result);
+	                return json;
+                }
+               
+            } 
+            
+            Log.e(Tag.MSOS,"HTTP Error "+ response.getStatusLine());
             
         } catch (Exception e) {
             Log.e(Tag.MSOS, e.getMessage());
