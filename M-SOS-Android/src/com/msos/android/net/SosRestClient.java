@@ -4,9 +4,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.location.Location;
+import android.util.Log;
 
 import com.msos.android.beans.Notification;
 import com.msos.android.beans.Profil;
+import com.msos.android.log.Tag;
 import com.msos.android.typesafeenum.AlertType;
 
 /**
@@ -30,8 +32,8 @@ public class SosRestClient extends RestClient{
 				 JSONObject params = new JSONObject();
 				 params.put("uniqueId", uniqueId);
 				 params.put("alertType", alertType.getValue());
-				 params.put("latitude", String.valueOf(location.getLatitude()));
-				 params.put("longitude",  String.valueOf(location.getLongitude()));
+				 params.put("latitude", location.getLatitude());
+				 params.put("longitude",  location.getLongitude());
 			     params.put("twittNotify", String.valueOf(false));
 			     
 				 if (isVictime){
@@ -40,13 +42,21 @@ public class SosRestClient extends RestClient{
 					 params.put("actAs", "T");
 				 }
 				 
+				 // Call the service
+				 Log.i(Tag.MSOS,params.toString());
 				 JSONObject result = RestClient.post(SERVER_URI+"Alert", "createAlert", 1, params);
-	
+				 Log.i(Tag.MSOS,result.toString());
+				  
 				 return result.getBoolean("result");
+				 
+			 } else {
+				 Log.i(Tag.MSOS,"Location is null, couldn't send an alert");
 			 }
 			 
 		} catch (JSONException e) {
-			e.printStackTrace();
+			Log.e(Tag.MSOS, "JSON error", e);
+		} catch (Exception e) {
+			Log.e(Tag.MSOS, "Exception", e);
 		}
 		
 		return false;
@@ -89,12 +99,16 @@ public class SosRestClient extends RestClient{
 			 params.put("lang",lang);
 			 
 			 // Call
+			 Log.i(Tag.MSOS,params.toString());
 			 JSONObject result = RestClient.post(SERVER_URI+"User", "signup", 1, params);
-
+			 Log.i(Tag.MSOS,result.toString());
+			 
 			 return result.getBoolean("result");
 			 
 		} catch (JSONException e) {
-			e.printStackTrace();
+			Log.e(Tag.MSOS, "JSON error", e);
+		} catch (Exception e) {
+			Log.e(Tag.MSOS, "Exception", e);
 		}
 		return false;
 	 }

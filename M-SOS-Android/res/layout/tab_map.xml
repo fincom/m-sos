@@ -12,7 +12,7 @@
 	    android:layout_height="fill_parent" 
 	    android:enabled="true" 
 	    android:clickable="true" 
-	    android:apiKey="04OULjD48ftvooxoa8wkuSvkkp5bOp8dxGTBtjg" />
+	    android:apiKey="04OULjD48ftshQsn0c957BHkEoUDfGkIo-pCtew" />
 	    
         <!--  Debug ="04OULjD48ftvooxoa8wkuSvkkp5bOp8dxGTBtjg" /> -->
 	    <!--  Android ="04OULjD48ftshQsn0c957BHkEoUDfGkIo-pCtew" />  -->
