@@ -48,9 +48,10 @@ public class SosActivity extends MapActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        // Remote Exception handler
-        ExceptionHandler.register(this,"http://www.m-sos.com/stacktrace.php");
+        Log.d(Tag.MSOS, "SOS Activity Create");
         
+        // Remote Exception handler
+        ExceptionHandler.register(this,"http://labs.geeek.org/android/stacktrace.php");
         	
         // Enable GPS
         if(!DeviceManager.getInstance(this).enableLocationService(this)){

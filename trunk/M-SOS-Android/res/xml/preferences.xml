@@ -26,6 +26,16 @@
 					android:entryValues="@array/bloodgroup"  
 					android:dialogTitle="@string/preferences_bloodgroup" />  
 
+	        <EditTextPreference 
+	              	android:key="sos.allergies"
+	            	android:title="@string/preferences_allergies"
+	            	android:summary="@string/preferences_allergies_summary" />   
+	            	
+	        <CheckBoxPreference 
+	              	android:key="sos.organdonation"
+	            	android:title="@string/preferences_organdonation"
+	            	android:summary="@string/preferences_organdonation_summary" />   
+	            	
 		</PreferenceCategory>
 
 	<PreferenceCategory android:title="@string/preferences_misc">

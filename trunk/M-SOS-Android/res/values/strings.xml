@@ -39,6 +39,10 @@
     <string name="preferences_phonenumber_summary">Cliquez pour entrer votre numéro de téléphone</string>
     <string name="preferences_bloodgroup">Groupe Sanguin</string>
     <string name="preferences_bloodgroup_summary">Sélectionnez votre groupe Sanguin</string>
+    <string name="preferences_allergies">Allergies connues</string>
+    <string name="preferences_allergies_summary">Renseignez vos allergies</string>
+    <string name="preferences_organdonation">Don d'organe</string>
+    <string name="preferences_organdonation_summary">Etes-vous donneur d'organe ?</string>
     
     <string name="preferences_misc">Divers</string>
     

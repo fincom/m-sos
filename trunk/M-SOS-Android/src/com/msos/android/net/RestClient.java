@@ -71,7 +71,8 @@ public abstract class RestClient {
         try {
 
             HttpResponse response = httpClient.execute(postMethod);
-            
+        	Log.d(Tag.MSOS,"HTTP  "+ response.getStatusLine());
+        	
             // Get hold of the response entity
             HttpEntity entity = response.getEntity();
  
@@ -81,7 +82,7 @@ public abstract class RestClient {
                 InputStream instream = entity.getContent();
                 String result = convertStreamToString(instream);
                 Log.d(Tag.MSOS,"Response: "+result);
- 
+                
                 if (!result.equals("")){
                 	// A Simple JSONObject Creation
                 	JSONObject json = new JSONObject(result);
@@ -109,13 +110,14 @@ public abstract class RestClient {
       
     	HttpClient httpClient = new DefaultHttpClient();
         HttpPost postMethod = new HttpPost(mUrl);
-       
+        postMethod.setHeader("User-Agent", "Mozilla/5.0 (Linux; U; Android 1.0; en-us; dream) AppleWebKit/525.10+ (KHTML, like Gecko) Version/3.0.4 Mobile Safari/523.12.2");
+        postMethod.setHeader("Content-Type", "application/json");
+        
         Log.i(Tag.MSOS,"HTTP POST : " + mUrl + " method : "+methodName + " parameters : "+params.toString());
         try {
         	// Prepare parameters
         	HttpParams httpParams = new BasicHttpParams();
         	JSONObject jsonObject = new JSONObject();
-
         	
         	// Set JSON Object
         	jsonObject.put("params", params);
@@ -129,6 +131,7 @@ public abstract class RestClient {
             Log.d(Tag.MSOS,"Parameters: "+jsonObject.toString());
             postMethod.setParams(httpParams);
             HttpResponse response = httpClient.execute(postMethod);
+            Log.d(Tag.MSOS,"HTTP  "+ response.getStatusLine());
             
             // Get hold of the response entity
             HttpEntity entity = response.getEntity();
