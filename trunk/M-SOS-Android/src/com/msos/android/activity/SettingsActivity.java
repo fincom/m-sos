@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
-import com.msos.android.R;
 import com.msos.android.beans.Notification;
 import com.msos.android.beans.Profil;
 import com.msos.android.manager.DeviceManager;

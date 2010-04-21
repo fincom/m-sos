@@ -1,4 +1,4 @@
-package com.msos.android.service;
+package com.msos.android.activity.service;
 
 import android.app.Service;
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.util.Log;
 
-import com.msos.android.R;
+import com.msos.android.activity.R;
 import com.msos.android.activity.SosActivity;
 import com.msos.android.log.Tag;
 import com.msos.android.manager.AlertManager;

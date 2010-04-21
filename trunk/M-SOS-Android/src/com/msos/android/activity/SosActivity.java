@@ -21,11 +21,10 @@ import android.widget.TabHost;
 import android.widget.ToggleButton;
 import android.widget.TabHost.TabSpec;
 
-import com.msos.android.R;
+import com.msos.android.activity.service.FallDetectService;
 import com.msos.android.log.Tag;
 import com.msos.android.manager.AlertManager;
 import com.msos.android.manager.DeviceManager;
-import com.msos.android.service.FallDetectService;
 import com.msos.android.typesafeenum.AlertType;
 import com.nullwire.trace.ExceptionHandler;
 

@@ -19,7 +19,6 @@ import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
-import com.msos.android.R;
 import com.msos.android.listener.LocationListener;
 import com.msos.android.log.Tag;
 import com.msos.android.manager.DeviceManager;
