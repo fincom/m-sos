@@ -1,13 +1,13 @@
-package com.msos.android.receiver;
-
-import com.msos.android.activity.SosActivity;
-import com.msos.android.log.Tag;
-import com.msos.android.service.FallDetectService;
+package com.msos.android.activity.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+
+import com.msos.android.activity.SosActivity;
+import com.msos.android.activity.service.FallDetectService;
+import com.msos.android.log.Tag;
 
 /**
  * SosReceiver

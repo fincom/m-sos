@@ -12,7 +12,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.telephony.gsm.SmsManager;
 
-import com.msos.android.R;
+import com.msos.android.activity.R;
 import com.msos.android.activity.SosActivity;
 import com.msos.android.listener.LocationListener;
 import com.msos.android.net.SosRestClient;
